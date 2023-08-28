@@ -2320,8 +2320,8 @@
             trueButtonText: "결정",
             falseButtonText: "自定义排除",
             neutralButtonText: "취 소",
-            messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${TOP_HOST_NAME}</p><p style="color:darkgreen">该域名下所有页面将重新进行字体渲染\uff01</p><p>确定后当前页面将自动刷新，请确认是否恢复？</p>`,
-            titleText: "恢复字体渲染",
+            messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${TOP_HOST_NAME}</p><p style="color:darkgreen">该域名下所有页面将重新进行字体渲染\uff01</p><p>确定后当前页面将自动刷新，请确认是否재개？</p>`,
+            titleText: "재개字体渲染",
           });
           if (await frDialog.respond()) {
             let panDomain;
@@ -2345,7 +2345,7 @@
                 falseButtonText: "管 理",
                 neutralButtonText: "취 소",
                 messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${panDomain}</p><p style="color:darkred">该网站是被以上包含通配符的泛域名所排除渲染的。</p><p>『确定』将自动取消该泛域名下所有的排除项。</p><p>『管理』您将进入自定义排除站点列表手动处理。</p>`,
-                titleText: "恢复泛域名下的字体渲染",
+                titleText: "재개泛域名下的字体渲染",
               });
               if (await frDialog.respond()) {
                 exSite = await exSiteData();
@@ -2375,14 +2375,14 @@
                 `<span>${i + 1 > 9 ? i + 1 : "0".concat(i + 1)}. </span>` +
                 `<span style="overflow:hidden;margin-right:auto;padding-left:5px;width:85%;text-overflow:ellipsis;font-weight:700;-webkit-user-select:all;user-select:all" ` +
                 `title="${domainName}">${domainName}</span><span>[<a id="${def.const.seed}_d_d_l_s_${i}" data-fr-domain="${domainName}" ` +
-                `style="padding:2px;background:transparent;color:#8b0000;font-size:14px!important;cursor:pointer">删除</a>]</span></li>`
+                `style="padding:2px;background:transparent;color:#8b0000;font-size:14px!important;cursor:pointer">제거</a>]</span></li>`
             );
           }
           listContents = listContents || `<li id="${def.const.seed}_temporary">---- 暂时没有自定义排除站点 ----</li>`;
           let frDialog = new FrDialogBox({
-            trueButtonText: "保存数据",
+            trueButtonText: "데이터 저장",
             neutralButtonText: "취 소",
-            messageText: `<p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">添加自定义排除站点</b>：在文本框中输入正确的域名，点击添加按钮，支持首位通配符的泛域名，如：*.example.com</p><p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">数据保存</b>：完成所有添加、删除操作后需点击保存按钮才会使数据保存生效，保存数据后不能撤回，请谨慎操作。</p><p style="display:flex;justify-content:left;align-items:center"><input id="${def.const.seed}_d_s_" style="box-sizing:content-box;margin:4px 6px;padding:2px 6px;width:57%;height:22px;outline:none!important;border:2px solid #777777;border-radius:4px;font:normal 400 16px/150% monospace,Courier New,system-ui,-apple-system,BlinkMacSystemFont,serif!important"><button id="${def.const.seed}_d_s_s_" style="box-sizing:border-box;margin:0;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#333333!important;outline:none!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">查 询</button><button id="${def.const.seed}_d_s_a_" style="box-sizing:border-box;margin:0 0 0 4px;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#8b0000!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">添 加</button></p><ul id="${def.const.seed}_d_d_" style="overflow-x:hidden;margin:0!important;padding:0!important;max-height:190px;list-style:none!important;overscroll-behavior:contain">${listContents}</ul>`,
+            messageText: `<p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">사용자 지정 제외 사이트 추가</b>：텍스트 상자에 올바른 도메인 이름을 입력하고 추가 버튼을 클릭하여 다음과 같은 첫 번째 와일드카드 일반 도메인 이름을 지원합니다.：*.example.com</p><p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">데이터 보존</b>：完成所有添加、제거 작업 후 저장 버튼을 클릭해야 데이터를 효과적으로 저장할 수 있습니다，저장 후에는 데이터를 철회할 수 없으니 주의하세요。</p><p style="display:flex;justify-content:left;align-items:center"><input id="${def.const.seed}_d_s_" style="box-sizing:content-box;margin:4px 6px;padding:2px 6px;width:57%;height:22px;outline:none!important;border:2px solid #777777;border-radius:4px;font:normal 400 16px/150% monospace,Courier New,system-ui,-apple-system,BlinkMacSystemFont,serif!important"><button id="${def.const.seed}_d_s_s_" style="box-sizing:border-box;margin:0;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#333333!important;outline:none!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">문의</button><button id="${def.const.seed}_d_s_a_" style="box-sizing:border-box;margin:0 0 0 4px;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#8b0000!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">추가</button></p><ul id="${def.const.seed}_d_d_" style="overflow-x:hidden;margin:0!important;padding:0!important;max-height:190px;list-style:none!important;overscroll-behavior:contain">${listContents}</ul>`,
             titleText: "自定义排除站点管理",
           });
           const dsNode = qS(`#${def.const.seed}_d_s_`, def.const.dialogIf);
@@ -2422,7 +2422,7 @@
                 `<span>${exSiteLength > 9 ? exSiteLength : "0".concat(exSiteLength)}. </span>` +
                   `<span style="overflow:hidden;margin-right:auto;padding-left:5px;width:85%;text-overflow:ellipsis;font-weight:700;-webkit-user-select:all;user-select:all">` +
                   `${convertHtmlToText(exDomain)}</span><span>[<a id="${def.const.seed}_d_d_l_s_${exSiteLength - 1}" data-fr-domain="${convertHtmlToText(exDomain)}" ` +
-                  `style="padding:2px;background:transparent;color:#8b0000;font-size:14px!important;cursor:pointer">删除</a>]</span>`
+                  `style="padding:2px;background:transparent;color:#8b0000;font-size:14px!important;cursor:pointer">제거</a>]</span>`
               );
               ddNode.appendChild(newNode);
               _temp_.push(exDomain);
@@ -2440,13 +2440,13 @@
                 const _index_ = _temp_.indexOf(nodeDomain);
                 Boolean(~_index_) && _temp_.splice(_index_, 1);
                 target.setAttribute("data-del", _list_Id_);
-                target.textContent = "恢复";
+                target.textContent = "재개";
                 target.style.color = "darkgreen";
                 target.parentNode.previousElementSibling.style.cssText += "text-decoration:line-through;font-style:italic";
               } else {
                 !_temp_.includes(nodeDomain) && _temp_.push(nodeDomain);
                 target.removeAttribute("data-del");
-                target.textContent = "删除";
+                target.textContent = "제거";
                 target.style.color = "darkred";
                 target.parentNode.previousElementSibling.style.cssText += "text-decoration:none;font-style:normal";
               }
@@ -2455,9 +2455,9 @@
           if (await frDialog.respond()) {
             saveData("_EXCLUDE_SITES_", uniq(_temp_.sort()));
             let frDialog = new FrDialogBox({
-              trueButtonText: "感谢使用",
-              messageText: `<p style="color:darkgreen">自定义排除网站数据已成功保存\uff01</p><p>页面将在您确认后自动刷新。</p>`,
-              titleText: "自定义排除网站数据保存",
+              trueButtonText: "이용감사",
+              messageText: `<p style="color:darkgreen">웹사이트 데이터의 사용자 지정 제외가 성공적으로 저장되었습니다.\uff01</p><p>확인 후 페이지가 자동으로 새로 고쳐집니다.</p>`,
+              titleText: "웹사이트 데이터 보존의 사용자 지정 제외",
             });
             if (await frDialog.respond()) closeConfigurePage({ isReload: true });
             frDialog = null;
@@ -2516,19 +2516,19 @@
             if (font_Ready) {
               if (typeof def.const.exSitesIndex === "undefined") {
                 font_Set ? GMunregisterMenuCommand(font_Set) : DEBUG("%cInstalling Font_Set_Menu", "color:gray");
-                font_Set = GMregisterMenuCommand(`\ufff1\ud83c\udf13 字体渲染设置${isHotkey ? "(P)" : ""}`, addAction.setConfigure);
+                font_Set = GMregisterMenuCommand(`\ufff1\ud83c\udf13 글꼴 렌더링 설정${isHotkey ? "(P)" : ""}`, addAction.setConfigure);
                 exclude_site ? GMunregisterMenuCommand(exclude_site) : DEBUG("%cInstalling Exclude_Site_Menu", "color:gray");
-                exclude_site = GMregisterMenuCommand(`\ufff2\u26d4 排除渲染 ${TOP_HOST_NAME} ${isHotkey ? "(X)" : ""}`, addAction.excludeSites);
+                exclude_site = GMregisterMenuCommand(`\ufff2\u26d4 렌더링 제외 ${TOP_HOST_NAME} ${isHotkey ? "(X)" : ""}`, addAction.excludeSites);
                 parameter_Set ? GMunregisterMenuCommand(parameter_Set) : DEBUG("%cInstalling Parameter_Set_Menu", "color:gray");
-                parameter_Set = GMregisterMenuCommand(`\ufff3\ud83d\udc8e 高级核心功能设置${isHotkey ? "(G)" : ""}`, addAction.vipConfigure);
+                parameter_Set = GMregisterMenuCommand(`\ufff3\ud83d\udc8e 고급 핵심 기능 설정${isHotkey ? "(G)" : ""}`, addAction.vipConfigure);
               } else {
                 include_site ? GMunregisterMenuCommand(include_site) : DEBUG("%cInstalling Include_Site_Menu", "color:gray");
                 include_site = GMregisterMenuCommand(`\ufff4\ud83c\udf40 重新渲染 ${TOP_HOST_NAME} ${isHotkey ? "(X)" : ""}`, addAction.includeSites);
                 feed_Back ? GMunregisterMenuCommand(feed_Back) : DEBUG("%cInstalling Feed_Back_Menu", "color:gray");
-                feed_Back = GMregisterMenuCommand(`\ufff5\ud83e\udde1 向作者反馈问题或建议${isHotkey ? "(T)" : ""}`, () => GMopenInTab(def.variable.feedback, false));
+                feed_Back = GMregisterMenuCommand(`\ufff5\ud83e\udde1 작성자에게 피드백 보내기${isHotkey ? "(T)" : ""}`, () => GMopenInTab(def.variable.feedback, false));
               }
             } else {
-              loading = GMregisterMenuCommand("\ufff0\ud83c\udf13 重新装载脚本菜单！", () => location.reload(true));
+              loading = GMregisterMenuCommand("\ufff0\ud83c\udf13 스크립트 다시 로드 메뉴", () => location.reload(true));
             }
           })
           .catch(e => ERROR("MenusInsert:", e.message));
@@ -3707,7 +3707,7 @@
                 if (typeof domainValueIndex !== "undefined" && cwdNode) {
                   const fontDate = setDateFormat("yyyy-MM-dd HH:mm:ss", new Date(domainValue[domainValueIndex].fontDate));
                   cwdNode.innerHTML = tTP.createHTML(
-                    `<p style="display:flex;height:30px;align-items:center"><span style="color:indigo"><strong>上次保存\uff1a</strong>${fontDate} </span><button id="${def.const.seed}_c_w_d_d_" style="box-sizing:border-box;margin-left:15px;padding:3px 5px;width:max-content;height:max-content;max-width:120px;min-height:30px;border:1px solid #777777;border-radius:4px;background-color:#eeeeee;color:#333333!important;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer" title="删除数据后将刷新页面">删除当前网站数据</button></p>`
+                    `<p style="display:flex;height:30px;align-items:center"><span style="color:indigo"><strong>上次保存\uff1a</strong>${fontDate} </span><button id="${def.const.seed}_c_w_d_d_" style="box-sizing:border-box;margin-left:15px;padding:3px 5px;width:max-content;height:max-content;max-width:120px;min-height:30px;border:1px solid #777777;border-radius:4px;background-color:#eeeeee;color:#333333!important;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer" title="제거数据后将刷新页面">제거当前网站数据</button></p>`
                   );
                   qS(`#${def.const.seed}_c_w_d_d_`, def.const.dialogIf).addEventListener("click", async () => {
                     typeof domainValueIndex !== "undefined" && domainValue.splice(domainValueIndex, 1);
