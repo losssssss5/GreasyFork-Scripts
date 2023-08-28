@@ -806,10 +806,10 @@
     /* INITIALIZE_FONT_LIBRARY */
 
     const fontCheck = new Set([
-      { ch: "微软雅黑", en: "Microsoft YaHei UI", ps: "MicrosoftYaHeiUI" },
-      { ch: "微軟正黑體", en: "Microsoft JhengHei", ps: "MicrosoftJhengHeiRegular" },
-      { ch: "苹方-简", en: "PingFang SC", ps: "PingFangSC-Regular" },
-      { ch: "蘋方-繁", en: "PingFang TC", ps: "PingFangTC-Regular" },
+      { ch: "맑은 고딕", en: "Malgun Gothic", ps: "MicrosoftYaHeiUI" },
+      { ch: "바탕", en: "Batang", ps: "MicrosoftJhengHeiRegular" },
+      { ch: "돋움", en: "Dotum", ps: "PingFangSC-Regular" },
+      { ch: "굴림", en: "Gulim", ps: "PingFangTC-Regular" },
       { ch: "蘋方-港", en: "PingFang HK", ps: "PingFangHK-Regular" },
       { ch: "更纱黑体 SC", en: "Sarasa Gothic SC", ps: "Sarasa-Gothic-SC-Regular" },
       { ch: "更紗黑體 TC", en: "Sarasa Gothic TC", ps: "Sarasa-Gothic-TC-Regular" },
