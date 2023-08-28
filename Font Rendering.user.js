@@ -3707,7 +3707,7 @@
                 if (typeof domainValueIndex !== "undefined" && cwdNode) {
                   const fontDate = setDateFormat("yyyy-MM-dd HH:mm:ss", new Date(domainValue[domainValueIndex].fontDate));
                   cwdNode.innerHTML = tTP.createHTML(
-                    `<p style="display:flex;height:30px;align-items:center"><span style="color:indigo"><strong>上次保存\uff1a</strong>${fontDate} </span><button id="${def.const.seed}_c_w_d_d_" style="box-sizing:border-box;margin-left:15px;padding:3px 5px;width:max-content;height:max-content;max-width:120px;min-height:30px;border:1px solid #777777;border-radius:4px;background-color:#eeeeee;color:#333333!important;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer" title="제거数据后将刷新页面">제거当前网站数据</button></p>`
+                    `<p style="display:flex;height:30px;align-items:center"><span style="color:indigo"><strong>최종저장\uff1a</strong>${fontDate} </span><button id="${def.const.seed}_c_w_d_d_" style="box-sizing:border-box;margin-left:15px;padding:3px 5px;width:max-content;height:max-content;max-width:120px;min-height:30px;border:1px solid #777777;border-radius:4px;background-color:#eeeeee;color:#333333!important;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer" title="데이터 제거 후 페이지가 새로 고쳐집니다.">현재 웹사이트 데이터 제거</button></p>`
                   );
                   qS(`#${def.const.seed}_c_w_d_d_`, def.const.dialogIf).addEventListener("click", async () => {
                     typeof domainValueIndex !== "undefined" && domainValue.splice(domainValueIndex, 1);
