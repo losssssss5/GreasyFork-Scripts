@@ -1625,7 +1625,7 @@
               <div class="${def.class.fontList}"></div>
             </li>
             <li id="${def.id.fontFace}">
-              <div style="margin:0;padding:0">재작성（기본\uff1a켜기）</div>
+              <div style="margin:0;padding:0">글꼴변경경（기본\uff1a켜기）</div>
               <div style="margin:0;padding:0;height:32px;align-self:center">
                 <input type="checkbox" id="${def.id.fface}" class="${def.class.checkbox}" ${CONST_VALUES.fontFace ? "checked" : ""} />
                 <label for="${def.id.fface}"></label>
