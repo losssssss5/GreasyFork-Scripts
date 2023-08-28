@@ -1,15 +1,10 @@
 // ==UserScript==
-// @name               字体渲染（自用脚本）
-// @name:zh-CN         字体渲染（自用脚本）
-// @name:zh-TW         字體渲染（自用腳本）
+// @name               글자렌더링（스크립트）
 // @name:ja            フォントレンダリング（カスタマイズ）
 // @name:en            Font Rendering (Customized)
 // @version            2023.08.05.1
 // @author             F9y4ng
-// @description        无需安装MacType，优化浏览器字体渲染效果，让每个页面的字体变得更有质感。默认使用“微软雅黑字体”，也可根据喜好自定义其他字体使用。脚本针对浏览器字体渲染提供了字体重写、字体平滑、字体缩放、字体描边、字体阴影、对特殊样式元素的过滤和许可、自定义等宽字体等高级功能。脚本支持全局渲染与个性化渲染功能，可通过“单击脚本管理器图标”或“使用快捷键”呼出配置界面进行参数配置。脚本已兼容绝大部分主流浏览器及主流脚本管理器，且兼容常用的Greasemonkey脚本和浏览器扩展。
-// @description:zh-CN  无需安装MacType，优化浏览器字体渲染效果，让每个页面的字体变得更有质感。默认使用“微软雅黑字体”，也可根据喜好自定义其他字体使用。脚本针对浏览器字体渲染提供了字体重写、字体平滑、字体缩放、字体描边、字体阴影、对特殊样式元素的过滤和许可、自定义等宽字体等高级功能。脚本支持全局渲染与个性化渲染功能，可通过“单击脚本管理器图标”或“使用快捷键”呼出配置界面进行参数配置。脚本已兼容绝大部分主流浏览器及主流脚本管理器，且兼容常用的Greasemonkey脚本和浏览器扩展。
-// @description:zh-TW  無需安裝MacType，優化瀏覽器字體渲染效果，讓每個頁面的字體變得更有質感。默認使用“微軟雅黑字體”，也可根據喜好自定義其他字體使用。腳本針對瀏覽器字體渲染提供了字體重寫、字體平滑、字體縮放、字體描邊、字體陰影、對特殊樣式元素的過濾和許可、自定義等寬字體等高級功能。腳本支持全局渲染與個性化渲染功能，可通過「單擊腳本管理器圖標」或「使用快捷鍵」呼出配置界面進行參數配置。腳本已兼容絕大部分主流瀏覽器及主流腳本管理器，且兼容常用的Greasemonkey腳本和瀏覽器擴展。
-// @description:ja     MacTypeを実装することなく，ブラウザフォントレンダリング効果を最適化し，ページごとのフォントをより質感にする.。デフォルトでは“Microsoft雅黒フォント”を使用しており、好みに応じて他のフォントをカスタマイズして使用することもできます。スクリプトは，ブラウザフォントレンダリングに対して，フォント書き換え，フォント平滑化，フォントスケーリング，フォント描画エッジ，フォント陰影，特殊パターン要素のフィルタリングと許可，カスタマイズなどの広いフォントなどの高度な機能を提供している.。スクリプトは、グローバルレンダリングと個人化レンダリング機能を提供し、“スクリプトマネージャアイコンをクリックする”または“ショートカットキーを使用して”構成インタフェースを呼び出すことでパラメータ構成を行うことができます。スクリプトは，ほとんどの主流ブラウザと主流スクリプトマネージャに対応しており，通常のGreasemonkeyスクリプトやブラウザ拡張に対応している.
+// @description       MacType을 설치할 필요 없이 브라우저에서 글꼴 렌더링을 최적화하고 모든 페이지의 글꼴을 더욱 질감 있게 만들 수 있습니다. 기본적으로 Microsoft Black이 사용되지만 기본 설정에 따라 다른 글꼴을 사용자 지정할 수 있습니다. 이 스크립트는 글꼴 재작성, 글꼴 다듬기, 글꼴 크기 조정, 글꼴 획, 글꼴 그림자, 특수 스타일 요소의 필터링 및 라이선스, 사용자 지정 아이소메트릭 글꼴 등과 같은 브라우저 글꼴 렌더링을 위한 고급 기능을 제공합니다. 스크립트는 글로벌 렌더링과 개인화된 렌더링을 지원하며, '스크립트 관리자 아이콘을 클릭'하거나 '단축키를 사용하여' 구성 인터페이스를 호출하여 구성할 수 있습니다. 이 스크립트는 대부분의 주요 브라우저 및 주요 스크립트 관리자와 호환되며 Greasemonkey 스크립트 및 브라우저 확장 프로그램과도 호환됩니다.
 // @description:en     Without MacType, improve browser displaying more textured. "Microsoft Yahei" is used by default. For browser displaying, the script provides advanced features such as font rewriting, smoothing, scaling, stroke, shadow, special style elements, custom monospaced, etc. It can configure by "click Script Manager icon" or "use hotkeys" to call out the setup. The script is already compatible with major browsers and userscript managers, also commonly used Greasemonkey scripts and browser extensions.
 // @namespace          https://openuserjs.org/scripts/f9y4ng/Font_Rendering_(Customized)
 // @icon               https://img.icons8.com/stickers/48/font-style-formatting.png
@@ -533,15 +528,15 @@
         return scriptRedundancyWarning();
       }
       CUR_WINDOW_TOP &&
-        __console("warn", `${def.variable.scriptName}警告：\r\n脚本的注入模式已设置为"content"，部分脚本功能将受限制，如框架页面内部分功能失效、字体缩放后无法全局修正坐标等。`);
+        __console("warn", `${def.variable.scriptName}警告：\r\n스크립트의 주입 모드가 다음과 같이 설정됨"content"，프레임 화면의 일부 함수가 유효하지 않고 글꼴 크기 조정 후 좌표를 전역적으로 수정할 수 없는 등 스크립트 기능 중 일부가 제한됩니다.`);
     }
     document.documentElement?.setAttribute("fr-init-redundantcheck", true);
     return false;
 
     function scriptRedundancyWarning() {
       if (CUR_WINDOW_TOP) {
-        __console("error", `\ud83d\udea9 [Redundant Scripts]:\r\n发现冗余安装的脚本：${def.variable.scriptName}，如刷新后问题依旧，请访问 ${def.variable.feedback}/117 排查错误。`);
-        GMregisterMenuCommand("\ufff8\ud83d\uded1 发现冗余安装的脚本，点击排查！", () => {
+        __console("error", `\ud83d\udea9 [Redundant Scripts]:\r\n중복 설치된 스크립트 발견：${def.variable.scriptName}，새로 고친 후에도 문제가 지속되면，방문하세요 ${def.variable.feedback}/117 오류확인。`);
+        GMregisterMenuCommand("\ufff8\ud83d\uded1 중복 설치된 스크립트 발견, 문제 해결을 클릭하세요.！", () => {
           GMopenInTab(`${def.variable.feedback}/117`, false);
           location.reload();
         });
@@ -1589,14 +1584,14 @@
 
       const tFixViewport = String(
         `<span id="${def.id.fviewport}" style="width:auto;color:#666666;font-size:12px">
-          (<label title="如果开启它后出现网页加载或样式问题，请关闭之。">视口修正</label>
+          (<label title="전원을 켰을 때 페이지 로드 또는 스타일 지정에 문제가 있는 경우 전원을 끄세요.">뷰포트 보정</label>
           <input type="checkbox" id="${def.id.fixViewport}" ${CONST_VALUES.fixViewport ? "checked" : ""}/>)
         </span>`
       );
       const tFontSizeHTML = String(
         `<li id="${def.id.fontSize}">
         <div class="${def.class.flex}">
-          <span style="margin:0;padding:0">字体比例缩放</span>
+          <span style="margin:0;padding:0">글꼴크기조정</span>
           ${isFixViewport ? tFixViewport : ""}
           <input id="${def.id.fontScale}" type="text" data-fr-type="number" maxlength="5" ${getImageAndTextProperties()}/>
         </div>
@@ -1610,7 +1605,7 @@
       );
       const tFixStrokeHTML = String(
         `<span id="${def.id.fstroke}" style="width:auto;color:#666666;font-size:12px">
-          (<label title="如果开启它后出现明显的卡顿现象，请关闭之。">粗体修正</label>
+          (<label title="전원을 켰을 때 눈에 띄게 지연이 발생하면 전원을 끄세요. ">굵은글씨수정</label>
           <input type="checkbox" id="${def.id.fixStroke}" ${CONST_VALUES.fixStroke ? "checked" : ""} />)
         </span>`
       );
@@ -1620,7 +1615,7 @@
           <legend class="${def.class.title}">
             <span id="${def.const.seed}_scriptname" title="${def.variable.scriptName} v${curVersion}" style="color:#8b0000!important">${def.variable.scriptName}</span>
             <span class="${def.class.guide}">
-              <div class="${def.class.rotation}" title="打开脚本使用帮助文档" height="24" width="24"/>
+              <div class="${def.class.rotation}" title="스크립트 도움말 파일 열기" height="24" width="24"/>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0,0,255.99431,255.99431"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode:normal"><g transform="scale(0.5,0.5)"><path d="M504.1,256c0,-137 -111.1,-248.1 -248.1,-248.1c-137,0 -248.1,111.1 -248.1,248.1c0,137 111.1,248.1 248.1,248.1c137,0 248.1,-111.1 248.1,-248.1z" fill="#67a5df"></path><path d="M146.1,181.5c0,-13.9 4.5,-28 13.4,-42.3c8.9,-14.3 22,-26.1 39.1,-35.5c17.1,-9.4 37.1,-14.1 60,-14.1c21.2,0 40,3.9 56.2,11.8c16.3,7.8 28.8,18.5 37.7,32c8.9,13.5 13.3,28.1 13.3,43.9c0,12.5 -2.5,23.4 -7.6,32.7c-5.1,9.4 -11.1,17.5 -18,24.3c-7,6.8 -19.4,18.3 -37.5,34.4c-5,4.5 -9,8.5 -12,12c-3,3.4 -5.2,6.6 -6.7,9.4c-1.5,2.9 -2.6,5.7 -3.4,8.6c-0.8,2.9 -2,7.9 -3.6,15.1c-2.8,15.2 -11.5,22.9 -26.1,22.9c-7.6,0 -14,-2.5 -19.2,-7.5c-5.2,-5 -7.8,-12.4 -7.8,-22.2c0,-12.3 1.9,-23 5.7,-32c3.8,-9 8.9,-16.9 15.2,-23.7c6.3,-6.8 14.8,-14.9 25.5,-24.3c9.4,-8.2 16.1,-14.4 20.3,-18.6c4.2,-4.2 7.7,-8.8 10.5,-14c2.9,-5.1 4.3,-10.7 4.3,-16.7c0,-11.7 -4.4,-21.6 -13.1,-29.7c-8.7,-8.1 -20,-12.1 -33.7,-12.1c-16.1,0 -28,4.1 -35.6,12.2c-7.6,8.1 -14.1,20.1 -19.3,35.9c-5,16.6 -14.4,24.8 -28.3,24.8c-8.2,0 -15.1,-2.9 -20.8,-8.7c-5.6,-5.6 -8.5,-11.8 -8.5,-18.6zM253.4,422.3c-8.9,0 -16.7,-2.9 -23.4,-8.7c-6.7,-5.8 -10,-13.9 -10,-24.3c0,-9.2 3.2,-17 9.7,-23.3c6.4,-6.3 14.4,-9.4 23.7,-9.4c9.2,0 17,3.2 23.3,9.4c6.3,6.3 9.4,14.1 9.4,23.3c0,10.3 -3.3,18.3 -9.9,24.2c-6.6,5.9 -14.2,8.8 -22.8,8.8z" fill="#ffffff"></path></g></g></svg>
               </div>
             </span>
@@ -1630,14 +1625,14 @@
               <div class="${def.class.fontList}"></div>
             </li>
             <li id="${def.id.fontFace}">
-              <div style="margin:0;padding:0">字体重写（默认\uff1a开）</div>
+              <div style="margin:0;padding:0">재작성（기본\uff1a켜기）</div>
               <div style="margin:0;padding:0;height:32px;align-self:center">
                 <input type="checkbox" id="${def.id.fface}" class="${def.class.checkbox}" ${CONST_VALUES.fontFace ? "checked" : ""} />
                 <label for="${def.id.fface}"></label>
               </div>
             </li>
             <li id="${def.id.fontSmooth}">
-              <div style="margin:0;padding:0">字体平滑（默认\uff1a开）</div>
+              <div style="margin:0;padding:0">글꼴다듬기（기본\uff1a켜기）</div>
               <div style="margin:0;padding:0;height:32px;align-self:center">
                 <input type="checkbox" id="${def.id.smooth}" class="${def.class.checkbox}" ${CONST_VALUES.fontSmooth ? "checked" : ""} />
                 <label for="${def.id.smooth}"></label>
@@ -1646,7 +1641,7 @@
             ${def.const.isFontsize ? tFontSizeHTML : ""}
             <li id="${def.id.fontStroke}">
               <div class="${def.class.flex}">
-                <span style="margin:0;padding:0">字体描边尺寸</span>
+                <span style="margin:0;padding:0">글꼴 획 크기</span>
                 ${IS_REAL_BLINK ? tFixStrokeHTML : ""}
                 <input id="${def.id.strokeSize}" type="text" data-fr-type="number" maxlength="5" />
               </div>
@@ -1659,7 +1654,7 @@
             </li>
             <li id="${def.id.fontShadow}">
               <div class="${def.class.flex}">
-                <span style="margin:0;padding:0">字体阴影尺寸</span>
+                <span style="margin:0;padding:0">글꼴 그림자 크기</span>
                 <input id="${def.id.shadowSize}" type="text" data-fr-type="number" maxlength="4" />
               </div>
               <div class="${def.class.range}" data-ticks-position="top"
@@ -1671,12 +1666,12 @@
             </li>
             <li id="${def.id.shadowColor}">
               <div style="margin:0;padding:0">
-                <span style="margin:0;padding:0">阴影颜色</span>
+                <span style="margin:0;padding:0">그림자색</span>
                 <span class="${def.class.tooltip}">
-                  <span class="${def.class.emoji}" title="单击查看帮助">\ud83d\udd14</span>
+                  <span class="${def.class.emoji}" title="도움말보기">\ud83d\udd14</span>
                   <span class="${def.class.tooltip} ${def.class.ps3}">
-                    <p>阴影颜色可通过点击色块激活拾色器选择，也可自定义填写，格式支持: <em style="color:#cecece">RGB, RGBA, HEX, HEXA.</em> 纯白色的所有格式表示自身颜色 <em style="color:#cecece">currentcolor.</em></p>
-                    <p><em style="color:darkred">注意\uff1a输入数值会自动转化为HEXA格式，但数值保持一致性。错误格式会被替换为刚刚正确显示的数值。</em></p>
+                    <p> 그림자색은 색상칸을 클릭하여 색상선택기로 선택하거나 다음을 지원하는 형식으로 채울 수 있음: <em style="color:#cecece">RGB, RGBA, HEX, HEXA.</em> 모든 형식의 순수한 흰색은 고유한 색상을 나타냅니다. <em style="color:#cecece">currentcolor.</em></p>
+                    <p><em style="color:darkred">주의\uff1a입력값이 자동으로 HEXA 형식으로 변환됩니다. 그러나 값은 일관되게 유지됩니다. 잘못된 형식은 방금 올바르게 표시된 값으로 대체됩니다.</em></p>
                   </span>
                 </span>
               </div>
@@ -1685,39 +1680,39 @@
               </div>
             </li>
             <li id="${def.id.fontCss}" style="min-width:254px">
-              <div style="margin: 0 0 6px 0">需要渲染的网页元素\uff1a
+              <div style="margin: 0 0 6px 0">렌더링할 웹 요소\uff1a
                 <span class="${def.class.tooltip}">
-                  <span class="${def.class.emoji}" title="单击查看帮助">\ud83d\udd14</span>
+                  <span class="${def.class.emoji}" title="도움말보기">\ud83d\udd14</span>
                   <span class="${def.class.tooltip} ${def.class.ps4}">
-                    <p>默认为排除大多数网站常用的特殊CSS样式后需要渲染的页面元素。填写格式\uff1a<em style="color:#cecece">:not(.fa)</em> 或 <em style="color:#cecece">:not([class*="fa"])</em> 或 <em style="color:#cecece">,#id .classname</em></p>
-                    <p><em style="color:darkred">该选项为重要参数，默认只读，双击解锁。请尽量不要修改，避免造成样式失效。若失效请重置。</em></p>
+                    <p>대부분의 웹사이트에서 일반적으로 사용되는 특수 CSS 스타일을 제외한 후 렌더링해야 하는 페이지 요소에 대한 기본값입니다. 형식을 입력합니다.\uff1a<em style="color:#cecece">:not(.fa)</em> 혹은 <em style="color:#cecece">:not([class*="fa"])</em> 혹은 <em style="color:#cecece">,#id .classname</em></p>
+                    <p><em style="color:darkred">이 옵션은 기본적으로 읽기 전용인 중요한 매개변수이며, 잠금을 해제하려면 두 번 클릭합니다. 스타일 실패를 방지하기 위해 수정하지 마세요. 작동하지 않으면 재설정하세요.</em></p>
                   </span>
                 </span>
                 <div id="${def.id.cSwitch}" class="${def.class.switch}" fr-button-switch="ON">\u2227</div>
               </div>
-              <textarea placeholder="请谨慎修改默认值，避免渲染失效。" id="${def.id.cssinclued}" class="${def.class.readonly}"
-                title="重要参数，默认只读，双击解锁。" readonly="readonly">${CONST_VALUES.fontCSS}</textarea>
+              <textarea placeholder="렌더링 실패를 방지하기 위해 기본값 변경에 주의하세요." id="${def.id.cssinclued}" class="${def.class.readonly}"
+                title="중요 매개변수는, 기본적으로 읽기 전용이며, 두 번 클릭하여 잠금을 해제." readonly="readonly">${CONST_VALUES.fontCSS}</textarea>
             </li>
             <li id="${def.id.fontEx}" style="min-width:254px">
               <div style="margin: 0 0 6px 0">排除渲染的HTML标签\uff1a
                 <span id="${def.id.mono}" class="${def.class.tooltip}">
                   <span class="${def.class.emoji}" title="单击查看帮助">\ud83d\udd14</span>
                   <span class="${def.class.tooltip} ${def.class.ps5}">
-                    <p>该选项排除渲染字体描边、字体阴影效果，请将排除渲染的HTML标签用逗号分隔。具体规则请点击顶部旋转的帮助文件图标。</p>
-                    <p><em style="color:darkred">编辑该选项需要CSS知识，如需要排除复杂的样式或标签可通过这里进行添加，样式若混乱请重置。</em></p>
-                    <p>双击\ud83d\udd14可打开自定义等宽字体添加工具，设置您需要的等宽字体。</p>
-                    <p><em style="color:darkred">请注意：使用自定义等宽字体时，请谨慎删除该文本域中的重要代码：<br/>『 <em style="color:#ededed">pre,pre *,code,code *</em> 』</em></p>
+                    <p>이 옵션은 글꼴 획 및 글꼴 그림자 효과의 렌더링을 제외하며, 제외되는 HTML 태그는 쉼표로 구분하세요. 자세한 규칙은 상단의 회전하는 도움말 파일 아이콘을 클릭하세요.</p>
+                    <p><em style="color:darkred">이 옵션을 편집하려면 CSS에 대한 지식이 필요합니다. 복잡한 스타일이나 태그를 제외해야 하는 경우 여기를 통해 추가할 수 있으며, 스타일이 헷갈리는 경우 재설정하세요!</em></p>
+                    <p>더블 클릭\ud83d\udd14사용자 지정 아이소메트릭 글꼴 추가 도구를 열어 원하는 아이소메트릭 글꼴을 설정할 수 있습니다.</p>
+                    <p><em style="color:darkred">참고: 사용자 지정 아이소메트릭 글꼴을 사용할 때는 이 텍스트 필드에서 중요한 코드를 삭제하지 않도록 주의하세요!：<br/>『 <em style="color:#ededed">pre,pre *,code,code *</em> 』</em></p>
                   </span>
                 </span>
                 <div id="${def.id.eSwitch}" class="${def.class.switch}" fr-button-switch="ON">\u2227</div>
               </div>
-              <textarea id="${def.id.cssexclude}" placeholder="请输入要排除渲染的HTML标签，形如: input, em, div[id='test']">${CONST_VALUES.fontEx}</textarea>
+              <textarea id="${def.id.cssexclude}" placeholder="렌더링에서 제외할 HTML 태그를 입력하세요. 여기기: input, em, div[id='test']">${CONST_VALUES.fontEx}</textarea>
             </li>
             <li id="${def.id.submit}">
-              <button class="${def.class.reset}">重置</button>
-              <button class="${def.class.cancel}">取消</button>
-              <button id="${def.id.backup}">备份</button>
-              <button class="${def.class.submit}">保存</button>
+              <button class="${def.class.reset}">리셋셋</button>
+              <button class="${def.class.cancel}">취소</button>
+              <button id="${def.id.backup}">백업</button>
+              <button class="${def.class.submit}">보존</button>
             </li>
           </ul>
         </fieldset>
@@ -1731,7 +1726,7 @@
           if (typeof def.const.exSitesIndex === "undefined") {
             __console(
               "shown-system-info",
-              `%c${def.variable.scriptName}\r\n%cINTRO.URL:\u0020https://f9y4ng.likes.fans/FontRendering\r\n%c\u259e\u0020脚本版本\uff1a%cV%s%c%s%c\r\n\u259e\u0020个性化设置\uff1a%c%s%c/%s（当前设置：%s）\r\n%c\u259e\u0020本地备份\uff1a%s\u3000\u259a\u0020字体缩放\uff1a%s\r\n\u259e\u0020保存预览\uff1a%s\u3000\u259a\u0020视口修正\uff1a%s\r\n%c\u259e\u0020渲染字体\uff1a%s\r\n\u259e\u0020字体平滑\uff1a%s\u3000\u259a\u0020字体重写\uff1a%s\r\n\u259e\u0020字体描边\uff1a%s\u3000\u259a\u0020字体阴影\uff1a%s`,
+              `%c${def.variable.scriptName}\r\n%cINTRO.URL:\u0020https://f9y4ng.likes.fans/FontRendering\r\n%c\u259e\u0020脚本版本\uff1a%cV%s%c%s%c\r\n\u259e\u0020个性化设置\uff1a%c%s%c/%s（현재설정정：%s）\r\n%c\u259e\u0020本地备份\uff1a%s\u3000\u259a\u0020字体缩放\uff1a%s\r\n\u259e\u0020保存预览\uff1a%s\u3000\u259a\u0020视口修正\uff1a%s\r\n%c\u259e\u0020渲染字体\uff1a%s\r\n\u259e\u0020字体平滑\uff1a%s\u3000\u259a\u0020字体重写\uff1a%s\r\n\u259e\u0020字体描边\uff1a%s\u3000\u259a\u0020字体阴影\uff1a%s`,
               "color:#dc143c;font:normal 700 16px/150% system-ui,-apple-system,BlinkMacSystemFont,sans-serif",
               "color:#777777;font:italic 400 10px/180% monospace",
               "color:#708090;font-size:12px;line-height:180%",
@@ -2035,27 +2030,27 @@
       async function hintUpdateInfo(url, curVersion) {
         const CANDIDATE_FIELD =
           typeof curVersion === "undefined"
-            ? "新安装首次运行"
+            ? "새 설치의 첫 실행"
             : curVersion === null
-            ? "数据被重置后运行"
+            ? "데이터가 초기화 후 실행"
             : curVersion === def.variable.curVersion
-            ? "您通过历史查询"
-            : "更新后首次运行";
+            ? "기록을 통해 쿼리"
+            : "업데이트 후 첫 실행";
         const FIRST_INSTALL_NOTICE_WARNING =
           typeof curVersion === "undefined"
-            ? `<li class="${def.const.seed}_init"><strong>温馨提示</strong> 首次加载此脚本时，默认使用内置参数进行渲染，若显示效果不佳，<b>属于正常情况</b>。请根据您的显示器及浏览器的本地配置，<b>重新设定</b>渲染参数以达到最佳效果！</li>`
+            ? `<li class="${def.const.seed}_init"><strong>힌트</strong> 이 스크립트를 처음 로드할 때 디스플레이가 효과적이지 않은 경우 기본 제공 매개 변수를 사용하여 기본적으로 렌더링됩니다.<b>정상작동합니다</b>。모니터와 브라우저의 로컬 구성에 따라 다름，<b>검색</b>최상의 결과를 위한 렌더링 파라미터！</li>`
             : ``;
         const STRUCTURE_ERROR_NOTICE_WARNING =
           def.const.structureError === true
-            ? `<li class="${def.const.seed}_warn"><strong>数据重置警告</strong> 由于检测到本地运行的存储数据解析异常或被非法篡改，为确保程序正常运行，所有设置数据已初始化，请您手动还原正确的本地备份数据！</li>`
+            ? `<li class="${def.const.seed}_warn"><strong>데이터 초기화 경고</strong> 로컬에서 실행 중인 저장된 데이터의 비정상적인 구문 분석 또는 불법 변조가 감지됨，프로그램의 올바른 작동을 보장하려면，모든 설정 데이터 초기화，올바른 로컬 백업 데이터를 수동으로 복원하세요.！</li>`
             : curVersion === null
-            ? `<li class="${def.const.seed}_warn" style="color:indigo!important"><strong>数据已重建</strong> 程序开启升级后数据重建选项，所有数据已初始化。您仍可通过备份还原之前的设置数据，但<b>强烈建议</b>您重新配置参数，以使用新功能！记得及时重新备份哟！</li>`
+            ? `<li class="${def.const.seed}_warn" style="color:indigo!important"><strong>데이터 재설정됨</strong> 이 프로그램에는 업그레이드가 켜지고 모든 데이터가 초기화된 후 데이터를 다시 빌드하는 옵션이 있습니다. 백업을 통해 이전 설정 데이터를 계속 복원할 수 있지만，단<b>강력추천</b>새로운 기능을 사용하려면 매개변수를 재구성해야 합니다! 제때 다시 백업하는 것을 잊지 마세요!！</li>`
             : ``;
         let frDialog = new FrDialogBox({
-          trueButtonText: "好，去看看",
-          falseButtonText: "不，算了吧",
-          messageText: `<p style="word-break:break-all;"><span style="color:tomato;font:italic 700 22px/150% Arial">您好\uff01</span>这是${CANDIDATE_FIELD}<span style="padding:4px;font-weight:700;">${def.variable.scriptName}</span>更新版本<span style="padding:4px;color:tomato;font:italic 700 22px/150% Candara,Times New Roman!important">V${def.variable.curVersion}</span>，更新内容如下\uff1a</p><p><ul id="${def.const.seed}_update">${FIRST_INSTALL_NOTICE_WARNING}${STRUCTURE_ERROR_NOTICE_WARNING}${UPDATE_VERSION_NOTICE}</ul></p><p>建议您先看看 <strong style="color:tomato;font-weight:700">新版帮助文档</strong> ，去看一下吗？</p>`,
-          titleText: "脚本更新 - 温馨提示",
+          trueButtonText: "네，가서확인해보기",
+          falseButtonText: "아니，잊기",
+          messageText: `<p style="word-break:break-all;"><span style="color:tomato;font:italic 700 22px/150% Arial">안녕\uff01</span>이것은${CANDIDATE_FIELD}<span style="padding:4px;font-weight:700;">${def.variable.scriptName}</span>새 버전<span style="padding:4px;color:tomato;font:italic 700 22px/150% Candara,Times New Roman!important">V${def.variable.curVersion}</span>，업데이트사항은 다음과같음\uff1a</p><p><ul id="${def.const.seed}_update">${FIRST_INSTALL_NOTICE_WARNING}${STRUCTURE_ERROR_NOTICE_WARNING}${UPDATE_VERSION_NOTICE}</ul></p><p>먼저 살펴보시기 바랍니다. <strong style="color:tomato;font-weight:700">새 버전의 도움말 파일</strong> ，가서한번볼래？</p>`,
+          titleText: "스크립트 업데이트 - 유용한 팁",
         });
         if (await frDialog.respond()) GMopenInTab(url, false);
         frDialog = null;
@@ -2111,11 +2106,11 @@
         },
         excludeSites: async () => {
           let frDialog = new FrDialogBox({
-            trueButtonText: "确 定",
-            falseButtonText: "自定义排除",
-            neutralButtonText: "取 消",
-            messageText: `<p style="font:italic 700 24px/150% Candara,Times New Roman!important;word-break:break-all">${TOP_HOST_NAME}</p><p style="color:#8b0000">该域名下所有页面将被禁止字体渲染\uff01</p><p>确定后当前页面将自动刷新，请确认是否排除？</p>`,
-            titleText: "禁止字体渲染",
+            trueButtonText: "결 정",
+            falseButtonText: "사용자 지정 제외 사항",
+            neutralButtonText: "취 소",
+            messageText: `<p style="font:italic 700 24px/150% Candara,Times New Roman!important;word-break:break-all">${TOP_HOST_NAME}</p><p style="color:#8b0000">이 도메인의 모든 페이지에서 글꼴 렌더링이 비활성화됩니다.\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침되오니 제외 여부를 확인해 주세요? </p>`,
+            titleText: "글꼴 렌더링 비활성화",
           });
           if (await frDialog.respond()) {
             exSite = await exSiteData();
@@ -2138,20 +2133,20 @@
           globalDisable = Boolean(_config_data_.globalDisable);
           maxPersonalSites = Number(_config_data_.maxPersonalSites) || 100;
           let frDialog = new FrDialogBox({
-            trueButtonText: "保存数据",
-            falseButtonText: "帮助文件",
-            neutralButtonText: "取 消",
+            trueButtonText: "데이터보존",
+            falseButtonText: "도움말파일",
+            neutralButtonText: "취 소",
             messageText: String(
               `<ul class="${def.class.main}" style="overflow-x:hidden;box-sizing:content-box;margin:0;padding:5px 0;max-height:255px;overscroll-behavior:contain">
               <li id="${def.id.bk}">
-                <div class="${def.const.seed}_VIP" title="养成定期备份的好习惯，保护自己的数据安全\uff01">\u2460 本地备份功能（默认\uff1a开启）</div>
+                <div class="${def.const.seed}_VIP" title="데이터를 보호하기 위해 정기적으로 백업하는 좋은 습관을 기르세요.\uff01">\u2460 로컬 백업 기능（기본값\uff1a켜짐）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.isbackup}" class="${def.class.checkbox}" ${isBackupFunction ? "checked" : ""} />
                   <label for="${def.id.isbackup}"></label>
                 </div>
               </li>
               <li id="${def.id.pv}">
-                <div class="${def.const.seed}_VIP" title="无需保存刷新页面，直接预览渲染效果\uff01">\u2461 保存预览功能（默认\uff1a关闭）</div>
+                <div class="${def.const.seed}_VIP" title="페이지를 저장하거나 새로 고치지 않고 바로 렌더링 미리보기\uff01">\u2461 保存预览功能（默认\uff1a关闭）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.ispreview}" class="${def.class.checkbox}" ${isPreview ? "checked" : ""} />
                   <label for="${def.id.ispreview}"></label>
@@ -3535,11 +3530,11 @@
           if (!resetT) return;
           resetT.addEventListener("click", async () => {
             let frDialog = new FrDialogBox({
-              trueButtonText: "重 置",
-              falseButtonText: "恢 复",
-              neutralButtonText: "取 消",
-              messageText: `<p>『重置/恢复』将当前设置初始化为 <span style="color:slategray">程序默认的初始数据</span> 或 <span style="color:slategrey">上次正确保存的数据</span>。一般是在您错误配置参数且造成无法挽回的情况下才进行重置参数的操作。</p><p style="color:darkgreen">重置\uff1a重置当前数据为程序初始值，手动保存生效。</p><p style="color:darkred">恢复\uff1a替换为上次正确保存的数据，自动恢复预览。</p><p style="color:gray">取消\uff1a放弃重置操作。</p>`,
-              titleText: "参数重置确认",
+              trueButtonText: "재설정",
+              falseButtonText: "복원",
+              neutralButtonText: "취소",
+              messageText: `<p> 초기화/복원은 현재 설정을 다음과 같이 초기화합니다<span style="color:slategray">프로그램의 기본 초기 데이터</span> 或 <span style="color:slategrey">마지막으로 올바르게 저장된 데이터</span>。매개변수 재설정은 일반적으로 매개변수를 잘못 구성하여 상황을 되돌릴 수 없는 경우에 수행합니다.</p><p style="color:darkgreen">재설정\uff1a현재 데이터를 프로그램의 초기 값으로 재설정하고 수동으로 저장하여 적용합니다.</p><p style="color:darkred">복원\uff1a데이터를 마지막으로 올바르게 저장된 데이터로 바꾸고 미리 보기를 자동으로 복원합니다.</p><p style="color:gray">취소\uff1a재설정 작업을 중단합니다.</p>`,
+              titleText: "매개변수 재설정 확인",
             });
             if (await frDialog.respond()) {
               smoothT.checked !== INITIAL_VALUES.fontSmooth ? smoothT.click() : DEBUG("<fontSmooth> NOT MODIFIED");
@@ -3688,11 +3683,11 @@
             } else {
               try {
                 let frDialog = new FrDialogBox({
-                  trueButtonText: "保存到全局数据",
-                  falseButtonText: "保存到网站数据",
-                  neutralButtonText: "取 消",
-                  messageText: `<p style="color:darkgreen;font-weight:700">保存到全局数据\uff1a</p><p>将当前设置保存为全局设置，默认使用全局参数。</p><p style="color:#8b0000;font-weight:700">保存到当前网站数据\uff1a<span id="${def.const.seed}_a_w_d_l_">[<span style="margin:0;padding:0 2px;color:#3e3e3e;font-weight:400;font-size:12px!important;cursor:pointer">全部数据列表</span>]</span></p><p style="min-height:22px"><span title="保存到网站数据会自动覆盖之前的数据" style="color:indigo;cursor:help;word-break:break-all" id="${def.const.seed}_c_w_d_">为 ${TOP_HOST_NAME} 保存独立的设置数据。</span>`,
-                  titleText: "保存设置数据",
+                  trueButtonText: "글로벌 데이터에 저장",
+                  falseButtonText: "웹사이트 데이터에 저장",
+                  neutralButtonText: "취 소",
+                  messageText: `<p style="color:darkgreen;font-weight:700">글로벌 데이터에 저장\uff1a</p><p>현재 설정을 전역 설정으로 저장하고 기본적으로 전역 매개 변수를 사용합니다.</p><p style="color:#8b0000;font-weight:700">현재 사이트 데이터에 저장\uff1a<span id="${def.const.seed}_a_w_d_l_">[<span style="margin:0;padding:0 2px;color:#3e3e3e;font-weight:400;font-size:12px!important;cursor:pointer">전체 데이터 목록</span>]</span></p><p style="min-height:22px"><span title="웹사이트에 데이터를 저장하면 이전 데이터를 자동으로 덮어씁니다." style="color:indigo;cursor:help;word-break:break-all" id="${def.const.seed}_c_w_d_">为 ${TOP_HOST_NAME} 독립적인 설정 데이터를 저장.</span>`,
+                  titleText: "설정 데이터 저장",
                 });
                 let domains, domainValue, domainValueIndex;
                 domains = await GMgetValue("_DOMAINS_FONTS_SET_");
@@ -3718,9 +3713,9 @@
                     typeof domainValueIndex !== "undefined" && domainValue.splice(domainValueIndex, 1);
                     saveData("_DOMAINS_FONTS_SET_", domainValue);
                     let frDialog = new FrDialogBox({
-                      trueButtonText: "感谢使用",
-                      messageText: "<p style='color:darkred'>当前网站的个性化数据已成功删除\uff01</p><p>当前页面将在您确认后自动刷新。</p>",
-                      titleText: "个性化数据删除",
+                      trueButtonText: "이용감사",
+                      messageText: "<p style='color:darkred'>현재 웹사이트의 개인화된 데이터가 성공적으로 삭제되었습니다.\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침됩니다.</p>",
+                      titleText: "개인 맞춤형 데이터 삭제",
                     });
                     if (await frDialog.respond()) closeConfigurePage({ isReload: true });
                     frDialog = null;
@@ -3783,11 +3778,11 @@
                     def.const.successId = true;
                   } else {
                     let frDialog = new FrDialogBox({
-                      trueButtonText: "依然保存",
-                      falseButtonText: "管理列表",
-                      neutralButtonText: "我放弃",
-                      messageText: `<p style="color:gray">您已经保存超过<span style="color:#dc143c;font-weight:700;font-style:italic;font-size:20px">${maxPersonalSites} </span>个网站的个性化数据了，过多的数据会使脚本运行速度过慢，进而会影响您浏览网页的响应速度，建议您及时删除一些平时访问较少的站点设置，然后再进行新网站设置的数据保存。</p><p style="color:crimson">您确认要继续保存吗？</p>`,
-                      titleText: "数据过多的提示",
+                      trueButtonText: "계속 보존됨",
+                      falseButtonText: "목록 관리",
+                      neutralButtonText: "포기하기",
+                      messageText: `<p style="color:gray">다음을 초과하여 저장했습니다<span style="color:#dc143c;font-weight:700;font-style:italic;font-size:20px">${maxPersonalSites} </span>각 사이트의 개인화 데이터, 데이터가 너무 많으면 스크립트가 너무 느리게 실행되어 검색 웹 페이지의 응답성에 영향을 미치므로 일반적으로 덜 방문하는 사이트 설정 중 일부를 삭제한 다음 새 사이트 설정의 데이터를 저장하는 것이 좋습니다.</p><p style="color:crimson">계속 사용하시겠습니까？</p>`,
+                      titleText: "데이터 과잉에 대한 팁",
                     });
                     if (await frDialog.respond()) {
                       saveData("_DOMAINS_FONTS_SET_", domainValue);
@@ -3808,9 +3803,9 @@
               } finally {
                 if (def.const.successId) {
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "感谢使用",
-                    messageText: "<p style='color:darkgreen'>您设置的字体渲染数据已成功保存\uff01</p><p>当前页面将在您确认后自动刷新。</p>",
-                    titleText: "字体渲染数据保存",
+                    trueButtonText: "이용해주셔서감사",
+                    messageText: "<p style='color:darkgreen'>설정한 글꼴 렌더링 데이터가 성공적으로 저장됨\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침됩니다.</p>",
+                    titleText: "글꼴 렌더링 데이터 저장",
                   });
                   if (await frDialog.respond()) closeConfigurePage({ isReload: true });
                   frDialog = null;
@@ -3826,11 +3821,11 @@
           backupT.addEventListener("click", async () => {
             try {
               let frDialog = new FrDialogBox({
-                trueButtonText: "备 份",
-                falseButtonText: "还 原",
-                neutralButtonText: "取 消",
-                messageText: `<p style="color:darkgreen;font-weight:700">备份到本地文件\uff1a</p><p>备份到本地，自动下载 backup.*.sqlitedb 文件。</p><p style="color:#8b0000;font-weight:700">从本地文件还原\uff1a</p><p><span style="color:indigo;cursor:pointer" id="${def.id.tfiles}">\ud83d\udd0e\u0020[点击这里载入*.sqlitedb备份文件]</span><input accept=".sqlitedb" type="file" id="${def.id.files}"/></p>`,
-                titleText: "备份与还原数据",
+                trueButtonText: "백업",
+                falseButtonText: "복원",
+                neutralButtonText: "취 소",
+                messageText: `<p style="color:darkgreen;font-weight:700">로컬 파일에 백업\uff1a</p><p>로컬로 백업하면 backup.*.sqlitedb 파일이 자동으로 다운로드됩니다. </p><p style="color:#8b0000;font-weight:700">로컬 파일에서 복원\uff1a</p><p><span style="color:indigo;cursor:pointer" id="${def.id.tfiles}">\ud83d\udd0e\u0020[여기를 클릭하여 *.sqlitedb 백업 파일을 로드하세요.]</span><input accept=".sqlitedb" type="file" id="${def.id.files}"/></p>`,
+                titleText: "데이터 백업 및 복원",
               });
               const tfs = qS(`#${def.id.tfiles}`, def.const.dialogIf);
               const fs = qS(`#${def.id.files}`, def.const.dialogIf);
@@ -3839,8 +3834,8 @@
                 fs.addEventListener("change", () => {
                   tfs.innerHTML = tTP.createHTML(
                     fs.files[0]
-                      ? `<em style="color:indigo;font-size:11px!important;word-break:break-all">${fs.files[0].name}</em><br/><span style="color:crimson">\u0020\ud83d\udd0e\u0020[重新选择]</span>`
-                      : `\ud83d\udd0e\u0020[点击这里载入*.sqlitedb备份文件]`
+                      ? `<em style="color:indigo;font-size:11px!important;word-break:break-all">${fs.files[0].name}</em><br/><span style="color:crimson">\u0020\ud83d\udd0e\u0020[다시 선택]</span>`
+                      : `\ud83d\udd0e\u0020[여기를 클릭하여 *.sqlitedb 백업 파일을 로드하세요.]`
                   );
                 });
               }
@@ -3874,9 +3869,9 @@
                 const _fileName_ = `FontRendering-backup-${via}-${timeStamp}.sqlitedb`;
                 dataDownload(_fileName_, sqliteDBDataAccess(JSON.stringify(db), 22, decrypt(ROOT_SECRET_KEY)));
                 let frDialog = new FrDialogBox({
-                  trueButtonText: "确 定",
-                  messageText: `<p style="color:darkgreen">备份数据已归档，备份文件导出下载中……</p><p style="color:#8b0000;font-style:italic;font-size:12px!important;word-break:break-all">${_fileName_}</p>`,
-                  titleText: "数据备份",
+                  trueButtonText: "결 정",
+                  messageText: `<p style="color:darkgreen">백업 데이터가 보관되었으며 백업 파일 내보내기 및 다운로드가 진행 중……</p><p style="color:#8b0000;font-style:italic;font-size:12px!important;word-break:break-all">${_fileName_}</p>`,
+                  titleText: "데이터 백업",
                 });
                 if (await frDialog.respond()) {
                   closeConfigurePage({ isReload: false });
@@ -3921,9 +3916,9 @@
                             DEBUG("no configure data");
                           }
                           let frDialog = new FrDialogBox({
-                            trueButtonText: "确 定",
-                            messageText: "<p style='color:darkgreen'>本地备份数据还原完毕\uff01</p><p>当前页面将在您确认后自动刷新。</p>",
-                            titleText: "数据还原成功",
+                            trueButtonText: "결 정",
+                            messageText: "<p style='color:darkgreen'>로컬 백업 데이터 복원 완료\uff01</p><p>현재 페이지는 확인 후 자동으로 새로고침됩니다.。</p>",
+                            titleText: "데이터 복원 성공",
                           });
                           if (await frDialog.respond()) closeConfigurePage({ isReload: true });
                           frDialog = null;
@@ -3933,9 +3928,9 @@
                       } catch (e) {
                         ERROR("FileReader.load:", e.message);
                         let frDialog = new FrDialogBox({
-                          trueButtonText: "确 定",
-                          messageText: "<p style='color:red'>数据校验错误，请选择正确的本地备份文件\uff01</p>",
-                          titleText: "数据文件错误",
+                          trueButtonText: "결 정",
+                          messageText: "<p style='color:red'>데이터 유효성 검사 오류, 올바른 로컬 백업 파일을 선택하세요.\uff01</p>",
+                          titleText: "데이터 파일 오류",
                         });
                         if (await frDialog.respond()) qS(`#${def.id.backup}`, def.const.configIf)?.click();
                         frDialog = null;
@@ -3948,9 +3943,9 @@
                 } catch (e) {
                   ERROR("<The file is null>", e.name);
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
-                    messageText: "<p style='color:indigo'>载入文件为空，请选择要还原的备份文件\uff01</p>",
-                    titleText: "没有文件载入",
+                    trueButtonText: "결 정",
+                    messageText: "<p style='color:indigo'>로드 파일이 비어 있습니다. 복원할 백업 파일을 선택하세요\uff01</p>",
+                    titleText: "로드된 문서 없음",
                   });
                   if (await frDialog.respond()) qS(`#${def.id.backup}`, def.const.configIf)?.click();
                   frDialog = null;
@@ -4149,7 +4144,7 @@
       function changePreviewButtonStyle(button, arr) {
         if (IS_REAL_GECKO && arr.includes(def.id.fontScale)) {
           button.textContent = "\u4fdd\u5b58";
-          button.title = "Firefox: 因字体比例缩放的兼容性问题，预览功能已暂停，请保存后查看效果！";
+          button.title = "Firefox: 글꼴 크기 조정의 호환성 문제로 인해 미리보기 기능이 일시 중단되었으니 저장하여 효과를 확인하시기 바랍니다!";
           button.setAttribute("style", "background-color:#da09b7!important;border-color:#da09b7!important");
           button.removeAttribute("v-Preview");
         } else {
@@ -4194,15 +4189,15 @@
               expReport += `${i + 1}、${exps[i]}${i + 1 !== exps.length ? "\u3000<br/>" : ""}`;
             }
             let frDialog = new FrDialogBox({
-              trueButtonText: "反馈问题",
-              falseButtonText: "刷新页面",
+              trueButtonText: "피드백 문제",
+              falseButtonText: "페이지 새로 고침",
               messageText:
-                `<p style="color:#dc143c;font-size:14px!important">脚本在运行时发生了重大异常或错误，若在『刷新页面』后依然报错，请通过『反馈问题』及时告知作者，感谢您的反馈\uff01<br/><kbd style="display:inline-block;box-sizing:content-box;margin:4px 0 0;padding:3px 10px;width:94%;border:1px solid rgba(175, 184, 193, 0.4);border-radius:6px;background-color:#f6f8fa;color:#666666;vertical-align:middle;text-align:center;font-size:14px!important">以下信息会自动保存至您的剪切板</kbd></p>` +
+                `<p style="color:#dc143c;font-size:14px!important">'페이지 새로 고침' 후에도 오류가 계속 발생하면 '피드백'을 통해 작성자에게 제때 알려주시면 감사하겠습니다!\uff01<br/><kbd style="display:inline-block;box-sizing:content-box;margin:4px 0 0;padding:3px 10px;width:94%;border:1px solid rgba(175, 184, 193, 0.4);border-radius:6px;background-color:#f6f8fa;color:#666666;vertical-align:middle;text-align:center;font-size:14px!important">다음 정보가 클립보드에 자동으로 저장됩니다.</kbd></p>` +
                 `<p><ul id="${def.const.seed}_copy_to_author" style="overflow-y:auto;margin:0!important;padding:0!important;max-height:300px;list-style-position:outside">` +
-                `<li>浏览器信息\uff1a${JSON.stringify(navigatorInfo)}\u3000</li><li>脚本扩展信息\uff1a${GMscriptHandler} ${GMversion}\u3000</li>` +
-                `<li>脚本版本信息\uff1a${def.variable.curVersion}\u3000</li><li>当前访问域名\uff1a${CUR_HOST_NAME}<span hidden>\u0020${CUR_HOST_PATH}</span>\u3000</li>` +
-                `<li>错误信息列表\uff1a\u3000<span style="display:block;color:tan">${expReport}</span></li></ul></p>`,
-              titleText: def.variable.scriptName + "错误报告",
+                `<li>브라우저 정보\uff1a${JSON.stringify(navigatorInfo)}\u3000</li><li>脚本扩展信息\uff1a${GMscriptHandler} ${GMversion}\u3000</li>` +
+                `<li>스크립트 버전 정보\uff1a${def.variable.curVersion}\u3000</li><li>当前访问域名\uff1a${CUR_HOST_NAME}<span hidden>\u0020${CUR_HOST_PATH}</span>\u3000</li>` +
+                `<li>오류메시지목록\uff1a\u3000<span style="display:block;color:tan">${expReport}</span></li></ul></p>`,
+              titleText: def.variable.scriptName + "오류보고",
             });
             frDialog.container.setAttribute("fr-error", true);
             const copyText = qS(`#${def.const.seed}_copy_to_author`, def.const.dialogIf)
