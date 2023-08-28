@@ -806,10 +806,10 @@
     /* INITIALIZE_FONT_LIBRARY */
 
     const fontCheck = new Set([
-      { ch: "맑은 고딕", en: "Malgun Gothic", ps: "MicrosoftYaHeiUI" },
-      { ch: "바탕", en: "Batang", ps: "MicrosoftJhengHeiRegular" },
-      { ch: "돋움", en: "Dotum", ps: "PingFangSC-Regular" },
-      { ch: "굴림", en: "Gulim", ps: "PingFangTC-Regular" },
+      { ch: "맑은 고딕", en: "Malgun Gothic" },
+      { ch: "바탕", en: "Batang" },
+      { ch: "돋움", en: "Dotum" },
+      { ch: "굴림", en: "Gulim" },
       { ch: "蘋方-港", en: "PingFang HK", ps: "PingFangHK-Regular" },
       { ch: "更纱黑体 SC", en: "Sarasa Gothic SC", ps: "Sarasa-Gothic-SC-Regular" },
       { ch: "更紗黑體 TC", en: "Sarasa Gothic TC", ps: "Sarasa-Gothic-TC-Regular" },
@@ -838,7 +838,7 @@
       { ch: "圆体-简", en: "Yuanti SC", ps: "YuantiSC-Regular" },
       { ch: "手书体", en: "ShouShuti", ps: "ShouShuti" },
       { ch: "幼圆", en: "YouYuan", ps: "YouYuan" },
-      { ch: "微软雅黑（置换版）", en: "Microsoft YaHei", ps: "MicrosoftYaHei" },
+      { ch: "한컴 말랑말랑", en: "Hancom MalangMalang", ps: "Hancom MalangMalang Regular" },
     ]);
 
     /* INITIALIZE_FONT_RENDERING_PARAMETERS */
