@@ -1726,7 +1726,7 @@
           if (typeof def.const.exSitesIndex === "undefined") {
             __console(
               "shown-system-info",
-              `%c${def.variable.scriptName}\r\n%cINTRO.URL:\u0020https://f9y4ng.likes.fans/FontRendering\r\n%c\u259e\u0020脚本版本\uff1a%cV%s%c%s%c\r\n\u259e\u0020个性化设置\uff1a%c%s%c/%s（현재설정정：%s）\r\n%c\u259e\u0020本地备份\uff1a%s\u3000\u259a\u0020字体缩放\uff1a%s\r\n\u259e\u0020保存预览\uff1a%s\u3000\u259a\u0020视口修正\uff1a%s\r\n%c\u259e\u0020渲染字体\uff1a%s\r\n\u259e\u0020字体平滑\uff1a%s\u3000\u259a\u0020字体重写\uff1a%s\r\n\u259e\u0020字体描边\uff1a%s\u3000\u259a\u0020字体阴影\uff1a%s`,
+              `%c${def.variable.scriptName}\r\n%cINTRO.URL:\u0020https://f9y4ng.likes.fans/FontRendering\r\n%c\u259e\u0020脚本版本\uff1a%cV%s%c%s%c\r\n\u259e\u0020个性化设置\uff1a%c%s%c/%s（현재설정정：%s）\r\n%c\u259e\u0020로컬 백업\uff1a%s\u3000\u259a\u0020글꼴 크기 조정\uff1a%s\r\n\u259e\u0020미리보기 저장\uff1a%s\u3000\u259a\u0020뷰포트 보정\uff1a%s\r\n%c\u259e\u0020렌더링 글꼴\uff1a%s\r\n\u259e\u0020글꼴 다듬기\uff1a%s\u3000\u259a\u0020글꼴 수정\uff1a%s\r\n\u259e\u0020글꼴 획\uff1a%s\u3000\u259a\u0020글꼴 그림자\uff1a%s`,
               "color:#dc143c;font:normal 700 16px/150% system-ui,-apple-system,BlinkMacSystemFont,sans-serif",
               "color:#777777;font:italic 400 10px/180% monospace",
               "color:#708090;font-size:12px;line-height:180%",
@@ -1762,7 +1762,7 @@
           } else {
             __console(
               "shown-exclude-info",
-              `%c${def.variable.scriptName}\r\n%c${TOP_HOST_NAME.toUpperCase()} 已在排除渲染列表内，若要重新渲染，请在脚本菜单中打开重新渲染。%s`,
+              `%c${def.variable.scriptName}\r\n%c${TOP_HOST_NAME.toUpperCase()} 렌더링 제외 목록에 이미 있는 렌더링을 다시 렌더링하려면 스크립트 메뉴에서 다시 렌더링을 켭니다.%s`,
               "color:#dc143c;font:normal 700 16px/150% system-ui,-apple-system,BlinkMacSystemFont,sans-serif",
               "color:indigo;font-size:12px;line-height:180%",
               isHotkey && !IS_CHEAT_UA ? `(${capitalize(os).startsWith("Mac") ? "Option" : "Alt"}+X)` : ""
@@ -1782,7 +1782,7 @@
           isCheatUA &&
             __console(
               "warn",
-              `%c浏览器UA异常检测警告：%c${trim}伪造userAgent信息会造成脚本部分功能失效，如需全功能请恢复浏览器默认userAgent信息。`,
+              `%c브라우저 UA 이상 감지 경고：%c${trim}가짜 사용자 에이전트 정보로 인해 함수의 스크립트 부분이 유효하지 않으므로 전체 기능이 필요한 경우 브라우저 기본 사용자 에이전트 정보로 복원하세요.`,
               "display:inline-block;padding:4px 0;font-weight:700",
               "display:inline-block;line-height:150%"
             );
@@ -1981,7 +1981,7 @@
           if (def.const.structureError !== true) {
             __console(
               "warn",
-              "%c数据已重建\r\n%c程序开启升级后数据重建选项，所有配置数据已初始化，您可手动还原正确的备份数据。但强烈建议您重新配置参数，以使用最新参数功能！",
+              "%c데이터가 재구성됨\r\n%c이 프로그램에서는 업그레이드 후 데이터를 재구성하는 옵션을 사용할 수 있으며, 모든 구성 데이터가 초기화되고 올바른 백업 데이터를 수동으로 복원할 수 있습니다. 하지만 최신 파라미터 기능을 사용하려면 파라미터를 재구성하는 것이 좋습니다!",
               "font-weight:700",
               "font-weight:400"
             );
@@ -1990,7 +1990,7 @@
           } else {
             __console(
               "error",
-              "%c数据重置警告\r\n%c因检测到存储数据解析异常或被非法篡改，为确保程序正常运行，所有配置数据已初始化，请手动还原正确的本地备份数据！",
+              "%c데이터 초기화 경고\r\n%c저장된 데이터의 비정상적인 구문 분석 또는 불법 변조가 감지되어 프로그램의 정상적인 작동을 보장하기 위해 모든 구성 데이터가 초기화되었으므로 올바른 로컬 백업 데이터를 수동으로 복원하시기 바랍니다！",
               "font-weight:700",
               "font-weight:400"
             );
@@ -2146,66 +2146,66 @@
                 </div>
               </li>
               <li id="${def.id.pv}">
-                <div class="${def.const.seed}_VIP" title="페이지를 저장하거나 새로 고치지 않고 바로 렌더링 미리보기\uff01">\u2461 保存预览功能（默认\uff1a关闭）</div>
+                <div class="${def.const.seed}_VIP" title="페이지를 저장하거나 새로 고치지 않고 바로 렌더링 미리보기\uff01">\u2461 미리보기 기능 저장（기본값\uff1a꺼짐）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.ispreview}" class="${def.class.checkbox}" ${isPreview ? "checked" : ""} />
                   <label for="${def.id.ispreview}"></label>
                 </div>
               </li>
               <li id="${def.id.fs}">
-                <div class="${def.const.seed}_VIP" title="实验性功能\uff1a兼容大部分浏览器，但仍在Beta测试阶段\uff01">\u2462 字体缩放功能（默认\uff1a关闭）</div>
+                <div class="${def.const.seed}_VIP" title="실험 기능\uff1a대부분의 브라우저와 호환되지만 아직 베타 테스트 중입니다.\uff01">\u2462 글꼴 크기 조정 기능（기본값\uff1a꺼짐）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.isfontsize}" class="${def.class.checkbox}" ${isFontsize ? "checked" : ""} />
                   <label for="${def.id.isfontsize}"></label>
                 </div>
               </li>
               <li id="${def.id.fvp}">
-                <div class="${def.const.seed}_VIP" title="实验性功能\uff1a跟随字体缩放开关，可单独关闭，使用方法查阅帮助文件\uff01">\u2463 视口单位修正（默认\uff1a开启）</div>
+                <div class="${def.const.seed}_VIP" title="실험적 기능\uff1a글꼴 확대/축소 스위치를 따라 별도로 끌 수 있으며, 사용 방법은 도움말 파일을 참조하세요.\uff01">\u2463 뷰포트 유닛 보정（기본값\uff1a켜짐）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.isfixviewport}" class="${def.class.checkbox}" ${isFixViewport ? "checked" : ""} />
                   <label for="${def.id.isfixviewport}"></label>
                 </div>
               </li>
               <li id="${def.id.hk}">
-                <div class="${def.const.seed}_VIP" title="如快捷键有冲突，请在此关闭它\uff01">\u2464 键盘快捷键功能（默认\uff1a开启）</div>
+                <div class="${def.const.seed}_VIP" title="바로 가기와 충돌이 있는 경우 여기에서 바로 가기를 닫습니다.\uff01">\u2464 키보드 단축키 기능（기본값\uff1a켜짐）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.ishotkey}" class="${def.class.checkbox}" ${isHotkey ? "checked" : ""} />
                   <label for="${def.id.ishotkey}"></label>
                 </div>
               </li>
               <li id="${def.id.ct}">
-                <div class="${def.const.seed}_VIP" title="您将无法第一时间获得更新内容，错过重要提示\uff01">\u2465 关闭更新提示功能（不推荐）</div>
+                <div class="${def.const.seed}_VIP" title="가장 먼저 업데이트를 받고 중요한 알림을 놓치지 마세요!\uff01">\u2465 업데이트 알림 비활성화(권장하지 않음）</div>
                 <div style="margin:0;padding:0">
                   <input type="checkbox" id="${def.id.isclosetip}" class="${def.class.checkbox}" ${isCloseTip ? "checked" : ""} />
                   <label for="${def.id.isclosetip}"></label>
                 </div>
               </li>
               <li id="${def.id.mps}">
-                <div class="${def.const.seed}_VIP" title="防止页面加载缓慢，不建议设置过高的数值\uff01">\u2466 个性化设置总数（默认\uff1a100）</div>
+                <div class="${def.const.seed}_VIP" title="페이지가 느리게 로드되는 것을 방지하며, 너무 높은 값은 설정하지 않는 것이 좋습니다.\uff01">\u2466 개인화 설정 총 개수（기본값값\uff1a100）</div>
                 <div style="margin:0 5px 0 0;padding:0">
                   <input maxlength="4" id="${def.id.maxps}" placeholder="100" value="${maxPersonalSites}"
                     style="box-sizing:border-box;padding:4px 5px;width:70px;min-width:70px;border:2px solid #b8860b;border-radius:4px;color:#333333;text-align:center;font:normal 500 16px/150% Impact,Times,serif!important" />
                 </div>
               </li>
               <li id="${def.id.flc}">
-                <div class="${def.const.seed}_VIP" title="安装新字体后，请先重启浏览器再重建全局缓存\uff01">\u2467 字体列表全局缓存（时效\uff1a7天）</div>
-                <button style="width:max-content;height:max-content;min-width:70px;min-height:32px" id="${def.id.flcid}">重建缓存</button>
+                <div class="${def.const.seed}_VIP" title="새 글꼴을 설치한 후 브라우저를 재시작하여 글로벌 캐시를 다시 빌드하세요.\uff01">\u2467 글꼴 목록에 대한 글로벌 캐시（소멸시효\uff1a7일）</div>
+                <button style="width:max-content;height:max-content;min-width:70px;min-height:32px" id="${def.id.flcid}">캐시 재설정</button>
               </li>
               ${
                 globalDisable
                   ? ``
                   : `<li id="${def.id.gc}">
-                      <div class="${def.const.seed}_VIP" title="当您仅需要在特定域名渲染时，可使用此快捷功能关闭全局设置\uff01">\u2468 仅在特定域名生效（全局禁用）</div>
-                      <button style="width:max-content;height:max-content;min-width:70px;min-height:32px" id="${def.id.globaldisable}">关闭全局</button>
+                      <div class="${def.const.seed}_VIP" title="특정 도메인에서만 렌더링해야 하는 경우 이 단축키를 사용하여 전역 설정을 해제하세요.\uff01">\u2468 특정 도메인에서만 유효(전역 비활성화) </div>
+                      <button style="width:max-content;height:max-content;min-width:70px;min-height:32px" id="${def.id.globaldisable}">글로벌 닫기</button>
                     </li>`
               }
             </ul>
-            <div id="${def.id.feedback}" title="遇到问题，建议先看看脚本帮助文件。"
+            <div id="${def.id.feedback}" title="문제가 발생하면 먼저 스크립트 도움말 파일을 살펴보는 것이 좋습니다."
               style="box-sizing:content-box;margin:0 0 0 5px;padding:4px 0;width:auto;height:auto;color:#333333;font-style:normal;font-size:16px;cursor:help">
-                \ud83e\udde1<span style="font-weight:700">\u0020如果您遇到错误或提建议，请及时向我反馈\u0020</span>\ud83e\udde1
+                \ud83e\udde1<span style="font-weight:700">\u0020오류가 발생하거나 제안 사항이 있으면 주저하지 마시고 피드백을 보내주세요!\u0020</span>\ud83e\udde1
             </div>`
             ),
-            titleText: `<span>高级核心功能设置</span><span style="font-size:16px!important">- Version ${def.variable.curVersion} -</span>`,
+            titleText: `<span>고급 핵심 기능 설정</span><span style="font-size:16px!important">- Version ${def.variable.curVersion} -</span>`,
           });
           let _bk, _pv, _fs, _fvp, _hk, _ct, _mps;
           _bk = Boolean(qS(`#${def.id.isbackup}`, def.const.dialogIf)?.checked);
@@ -2222,7 +2222,7 @@
           });
           const ctNode = qS(`#${def.id.isclosetip}`, def.const.dialogIf);
           ctNode?.addEventListener("click", function () {
-            const info = `关闭更新提示，您将不能及时获取更新信息，或错过重要的使用提示和警示通告。如遇重大功能升级，忽略更新提示有几率影响正常使用。双击字体渲染设置窗口顶部的脚本名称（或访问Github主页），可查看历史更新提示。\r\n\r\n请确认是否关闭更新提示功能？`;
+            const info = `업데이트 알림을 끄면 업데이트 정보를 제때 받지 못하거나 중요한 사용 팁 및 경고 알림을 놓칠 수 있습니다. 주요 기능 업그레이드의 경우 업데이트 알림을 무시하면 정상적인 사용에 영향을 미칠 수 있습니다. 글꼴 렌더링 설정 창 상단의 스크립트 이름을 두 번 클릭하거나 Github 홈페이지를 방문하여 업데이트 알림 내역을 확인하세요. \r\n\r\n업데이트 알림 기능이 꺼져 있는지 확인해 주세요.? `;
             if (this.checked) this.checked = Boolean(def.dialog.confirm(info));
           });
           const fsNode = qS(`#${def.id.isfontsize}`, def.const.dialogIf);
