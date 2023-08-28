@@ -1694,9 +1694,9 @@
                 title="중요 매개변수는, 기본적으로 읽기 전용이며, 두 번 클릭하여 잠금을 해제." readonly="readonly">${CONST_VALUES.fontCSS}</textarea>
             </li>
             <li id="${def.id.fontEx}" style="min-width:254px">
-              <div style="margin: 0 0 6px 0">排除渲染的HTML标签\uff1a
+              <div style="margin: 0 0 6px 0">렌더링된 HTML 태그 제외\uff1a
                 <span id="${def.id.mono}" class="${def.class.tooltip}">
-                  <span class="${def.class.emoji}" title="单击查看帮助">\ud83d\udd14</span>
+                  <span class="${def.class.emoji}" title="도움말을 보려면 클릭">\ud83d\udd14</span>
                   <span class="${def.class.tooltip} ${def.class.ps5}">
                     <p>이 옵션은 글꼴 획 및 글꼴 그림자 효과의 렌더링을 제외하며, 제외되는 HTML 태그는 쉼표로 구분하세요. 자세한 규칙은 상단의 회전하는 도움말 파일 아이콘을 클릭하세요.</p>
                     <p><em style="color:darkred">이 옵션을 편집하려면 CSS에 대한 지식이 필요합니다. 복잡한 스타일이나 태그를 제외해야 하는 경우 여기를 통해 추가할 수 있으며, 스타일이 헷갈리는 경우 재설정하세요!</em></p>
@@ -1709,7 +1709,7 @@
               <textarea id="${def.id.cssexclude}" placeholder="렌더링에서 제외할 HTML 태그를 입력하세요. 여기기: input, em, div[id='test']">${CONST_VALUES.fontEx}</textarea>
             </li>
             <li id="${def.id.submit}">
-              <button class="${def.class.reset}">리셋셋</button>
+              <button class="${def.class.reset}">리셋</button>
               <button class="${def.class.cancel}">취소</button>
               <button id="${def.id.backup}">백업</button>
               <button class="${def.class.submit}">보존</button>
