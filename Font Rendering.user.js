@@ -2523,7 +2523,7 @@
                 parameter_Set = GMregisterMenuCommand(`\ufff3\ud83d\udc8e 고급 핵심 기능 설정${isHotkey ? "(G)" : ""}`, addAction.vipConfigure);
               } else {
                 include_site ? GMunregisterMenuCommand(include_site) : DEBUG("%cInstalling Include_Site_Menu", "color:gray");
-                include_site = GMregisterMenuCommand(`\ufff4\ud83c\udf40 重新渲染 ${TOP_HOST_NAME} ${isHotkey ? "(X)" : ""}`, addAction.includeSites);
+                include_site = GMregisterMenuCommand(`\ufff4\ud83c\udf40 다시 렌더링 ${TOP_HOST_NAME} ${isHotkey ? "(X)" : ""}`, addAction.includeSites);
                 feed_Back ? GMunregisterMenuCommand(feed_Back) : DEBUG("%cInstalling Feed_Back_Menu", "color:gray");
                 feed_Back = GMregisterMenuCommand(`\ufff5\ud83e\udde1 작성자에게 피드백 보내기${isHotkey ? "(T)" : ""}`, () => GMopenInTab(def.variable.feedback, false));
               }
