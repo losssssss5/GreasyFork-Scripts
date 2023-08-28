@@ -2228,11 +2228,11 @@
           const fsNode = qS(`#${def.id.isfontsize}`, def.const.dialogIf);
           const fvpNode = qS(`#${def.id.isfixviewport}`, def.const.dialogIf);
           fsNode?.addEventListener("click", function () {
-            const info = "字体比例缩放（实验性功能）\r\n\r\n警告：".concat(
+            const info = "글꼴 크기 조정(실험적 기능) \r\n\r\n경고：".concat(
               IS_REAL_GECKO
-                ? "由于Firefox(Gecko内核)的兼容性原因，会对部分网站样式、功能兼容不足，从而造成样式错乱、页面动作缺失等问题，请根据实际需求酌情使用。\r\n\r\n强烈建议您：使用“浏览器缩放”替代(快捷键：ctrl+-/ctrl++)"
-                : "脚本对视口单位(vw, vh, vm*)已全局修正，由于CORS、CSP策略影响，在部分站点会被浏览器阻止，可通过安装扩展“Allow CORS”、“Allow CSP”来修正。如介意安全问题或有其他顾虑，请不要开启该功能，或单独将“视口单位修正”功能关闭即可。",
-              "\r\n\r\n请确认是否开启字体缩放功能？"
+                ? "파이어폭스(게코 커널)의 호환성 문제로 인해 일부 웹사이트 스타일 및 기능과의 호환성이 부족하여 잘못된 스타일, 페이지 동작 누락 등의 문제가 발생할 수 있으니 실제 필요에 따라 신중하게 사용해 주시기 바랍니다. \r\n\r\n대신 '브라우저 확대/축소'(단축키: ctrl+-/ctrl++)를 사용할 것을 적극 권장합니다."
+                : "확장 프로그램을 설치하면 일부 사이트의 브라우저에서 CORS 및 CSP 정책으로 인해 차단되는 뷰포트 단위(vw, vh, vm*)에 대해 스크립트가 전 세계적으로 수정되었습니다.“Allow CORS”、“Allow CSP”을 클릭하여 수정합니다. 보안 또는 기타 문제가 우려되는 경우 이 기능을 켜지 않거나 '뷰포트 단위 보정' 기능만 끄십시오。",
+              "\r\n\r\n글꼴 크기 조정이 활성화되어 있는지 확인하세요？"
             );
             if (this.checked) this.checked = Boolean(def.dialog.confirm(info));
             if (!this.checked && fvpNode?.checked) fvpNode.checked = false;
