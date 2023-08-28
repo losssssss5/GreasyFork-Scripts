@@ -2244,8 +2244,8 @@
           const globaldisableNode = qS(`#${def.id.globaldisable}`, def.const.dialogIf);
           globaldisableNode?.addEventListener("click", async () => {
             let frDialog = new FrDialogBox({
-              trueButtonText: "确 定",
-              neutralButtonText: "取 消",
+              trueButtonText: "결정",
+              neutralButtonText: "취 소",
               messageText: `<p style="color:darkred">下一步操作将关闭默认的全局设置数据，您可以仅在指定的域名保存需要渲染的站点独享数据。请注意，全局数据禁用后，您需要重新配置并保存为全局数据才能启用默认全局渲染规则。</p><p>请确认您是否要禁用全局设置？</p>`,
               titleText: "禁用全局设置数据",
             });
@@ -2270,7 +2270,7 @@
           });
           qS(`#${def.id.flcid}`, def.const.dialogIf)?.addEventListener("click", async () => {
             let frDialog = new FrDialogBox({
-              trueButtonText: "确 定",
+              trueButtonText: "결정",
               messageText: `<p style="padding-bottom:6px;color:#b8860b;text-align:center;font-size:18px!important">字体列表全局缓存已重建，当前页面即将刷新\uff01</p><p style="text-align:center"><a style="display:inline-block;overflow:hidden;width:302px;height:237px;border:2px solid #b8860b;border-radius:8px;background:url('${def.const.loadImg}') 50% 50% no-repeat"><img src='${def.const.fontlistImg}' alt="字体列表全局缓存已重建"/></a></p>`,
               titleText: "字体列表全局缓存已重建",
             });
@@ -2304,7 +2304,7 @@
             _config_data_.maxPersonalSites = _mps;
             saveData("_CONFIGURE_", _config_data_);
             let frDialog = new FrDialogBox({
-              trueButtonText: "确 定",
+              trueButtonText: "결정",
               messageText: "<p style='color:darkgoldenrod'>高级核心功能参数已成功保存，当前页面即将刷新\uff01</p>",
               titleText: "高级核心功能设置保存",
             });
@@ -2317,9 +2317,9 @@
         },
         includeSites: async () => {
           let frDialog = new FrDialogBox({
-            trueButtonText: "确 定",
+            trueButtonText: "결정",
             falseButtonText: "自定义排除",
-            neutralButtonText: "取 消",
+            neutralButtonText: "취 소",
             messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${TOP_HOST_NAME}</p><p style="color:darkgreen">该域名下所有页面将重新进行字体渲染\uff01</p><p>确定后当前页面将自动刷新，请确认是否恢复？</p>`,
             titleText: "恢复字体渲染",
           });
@@ -2341,9 +2341,9 @@
               closeConfigurePage({ isReload: true });
             } else {
               let frDialog = new FrDialogBox({
-                trueButtonText: "确 定",
+                trueButtonText: "결정",
                 falseButtonText: "管 理",
-                neutralButtonText: "取 消",
+                neutralButtonText: "취 소",
                 messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${panDomain}</p><p style="color:darkred">该网站是被以上包含通配符的泛域名所排除渲染的。</p><p>『确定』将自动取消该泛域名下所有的排除项。</p><p>『管理』您将进入自定义排除站点列表手动处理。</p>`,
                 titleText: "恢复泛域名下的字体渲染",
               });
@@ -2381,7 +2381,7 @@
           listContents = listContents || `<li id="${def.const.seed}_temporary">---- 暂时没有自定义排除站点 ----</li>`;
           let frDialog = new FrDialogBox({
             trueButtonText: "保存数据",
-            neutralButtonText: "取 消",
+            neutralButtonText: "취 소",
             messageText: `<p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">添加自定义排除站点</b>：在文本框中输入正确的域名，点击添加按钮，支持首位通配符的泛域名，如：*.example.com</p><p style="color:#555555;font-size:14px!important"><b style="color:#8b0000">数据保存</b>：完成所有添加、删除操作后需点击保存按钮才会使数据保存生效，保存数据后不能撤回，请谨慎操作。</p><p style="display:flex;justify-content:left;align-items:center"><input id="${def.const.seed}_d_s_" style="box-sizing:content-box;margin:4px 6px;padding:2px 6px;width:57%;height:22px;outline:none!important;border:2px solid #777777;border-radius:4px;font:normal 400 16px/150% monospace,Courier New,system-ui,-apple-system,BlinkMacSystemFont,serif!important"><button id="${def.const.seed}_d_s_s_" style="box-sizing:border-box;margin:0;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#333333!important;outline:none!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">查 询</button><button id="${def.const.seed}_d_s_a_" style="box-sizing:border-box;margin:0 0 0 4px;padding:3px 10px;width:max-content;height:max-content;min-width:60px;min-height:30px;border:1px solid #777777;border-radius:4px;background:#eeeeee;color:#8b0000!important;vertical-align:initial;text-align:center;letter-spacing:normal;font-weight:400;font-size:12px!important;cursor:pointer">添 加</button></p><ul id="${def.const.seed}_d_d_" style="overflow-x:hidden;margin:0!important;padding:0!important;max-height:190px;list-style:none!important;overscroll-behavior:contain">${listContents}</ul>`,
             titleText: "自定义排除站点管理",
           });
@@ -2595,16 +2595,16 @@
               `<li id="${def.const.seed}_d_d_l_${i}" style="display:flex;overflow:hidden;margin:0;padding:5px;max-width:364px;color:#555555;list-style:none;` +
                 `white-space:nowrap;font:normal 400 14px/150% ${INITIAL_VALUES.fontSelect},system-ui,-apple-system,sans-serif!important;justify-content:space-between">` +
                 `<span>[<a id="${def.const.seed}_d_d_l_s_${i}" style="display:inline;padding:2px;background:transparent;color:#8b0000;font-size:14px!important;` +
-                `cursor:pointer">删除</a>]<span>\u0020${i + 1 > 9 ? i + 1 : "0".concat(i + 1)}.</span></span><span style="overflow:hidden;margin-left:5px;width:57%;` +
+                `cursor:pointer">제거</a>]<span>\u0020${i + 1 > 9 ? i + 1 : "0".concat(i + 1)}.</span></span><span style="overflow:hidden;margin-left:5px;width:57%;` +
                 `text-overflow:ellipsis;font-weight:700;-webkit-user-select:all;user-select:all" title="${domainName}">${domainName}</span>` +
                 `<span style="margin:0 5px">${setDateFormat("yyyy-MM-dd", new Date(domainValue[i].fontDate))}</span></li>`
             );
           }
           let frDialog = new FrDialogBox({
-            trueButtonText: "确认操作，保存数据",
-            neutralButtonText: "取 消",
-            messageText: `<p style="color:#8b0000;text-indent:6px!important;font-size:14px!important">请谨慎操作，保存后生效，已删除的数据将不可恢复\uff01</p>${_data_search_}<ul id="${def.const.seed}_d_d_" style="overflow-x:hidden;margin:0!important;padding:0!important;max-height:190px;list-style:none!important;overscroll-behavior:contain">${listContents}</ul>`,
-            titleText: "网站个性化设置数据列表",
+            trueButtonText: "작업을 확인하고 데이터 저장",
+            neutralButtonText: "취 소",
+            messageText: `<p style="color:#8b0000;text-indent:6px!important;font-size:14px!important">저장 후 적용되며 삭제 된 데이터는 복구 할 수 없으므로주의해서 진행하십시오.\uff01</p>${_data_search_}<ul id="${def.const.seed}_d_d_" style="overflow-x:hidden;margin:0!important;padding:0!important;max-height:190px;list-style:none!important;overscroll-behavior:contain">${listContents}</ul>`,
+            titleText: "웹사이트 개인화 데이터 목록",
           });
           const dsNode = qS(`#${def.const.seed}_d_s_`, def.const.dialogIf);
           const dscNode = qS(`#${def.const.seed}_d_s_c_`, def.const.dialogIf);
@@ -2635,7 +2635,7 @@
                 const _list_Id_ = Number(target.id.replace(`${def.const.seed}_d_d_l_s_`, "")) || 0;
                 _temp_.push(domainValue[_list_Id_].domain);
                 target.setAttribute("data-del", domainValue[_list_Id_].domain);
-                target.textContent = "恢复";
+                target.textContent = "재개";
                 target.style.color = "darkgreen";
                 target.parentNode.nextElementSibling.style.cssText += "text-decoration:line-through;font-style:italic";
                 target.parentNode.nextElementSibling.nextElementSibling.style.cssText += "text-decoration:line-through;font-style:italic";
@@ -2643,7 +2643,7 @@
                 const _index_ = _temp_.indexOf(target.getAttribute("data-del"));
                 Boolean(~_index_) && _temp_.splice(_index_, 1);
                 target.removeAttribute("data-del");
-                target.textContent = "删除";
+                target.textContent = "제거";
                 target.style.color = "darkred";
                 target.parentNode.nextElementSibling.style.cssText += "text-decoration:none;font-style:normal";
                 target.parentNode.nextElementSibling.nextElementSibling.style.cssText += "text-decoration:none;font-style:normal";
@@ -2665,11 +2665,11 @@
             }
             saveData("_DOMAINS_FONTS_SET_", domainValue);
             let frDialog = new FrDialogBox({
-              trueButtonText: "感谢使用",
-              messageText: `<p style="color:darkgreen">网站个性化设置数据已成功保存\uff01</p><p>${
-                def.const.equal ? "当前网站数据有变动，页面将在您确认后自动刷新。" : "提示：您可继续留在当前页面进行其他操作。"
+              trueButtonText: "이용해 주셔서 감사합니다.",
+              messageText: `<p style="color:darkgreen">웹사이트 개인화 데이터가 성공적으로 저장되었습니다.\uff01</p><p>${
+                def.const.equal ? "현재 웹사이트 데이터의 변경 사항을 확인하면 페이지가 자동으로 새로고침됩니다.。" : "팁: 다른 작업을 위해 현재 페이지에 계속 머물러도 됩니다. "
               }</p>`,
-              titleText: "个性化数据保存",
+              titleText: "개인화된 데이터 저장",
             });
             if (await frDialog.respond()) closeConfigurePage({ isReload: Boolean(def.const.equal) });
             frDialog = null;
@@ -2769,22 +2769,22 @@
           fsearch: fontData => {
             const fHtml = String(
               `<div id="${def.id.selector}">
-                <span class="${def.class.spanlabel}">已选择字体\uff1a<span id="${def.id.cleaner}">[清空]</span></span>
+                <span class="${def.class.spanlabel}">선택한 글꼴\uff1a<span id="${def.id.cleaner}">[비우기]</span></span>
                 <div class="${def.class.selector}"></div>
               </div>
               <div class="${def.class.selectFontId}">
-                <span class="${def.class.spanlabel}">设置字体，请选择\uff1a</span>
-                <input type="search" placeholder="输入关键字可检索字体" autocomplete="off" class="${def.class.placeholder}">
+                <span class="${def.class.spanlabel}">글꼴을 설정하려면\uff1a</span>
+                <input type="search" placeholder="키워드를 입력하여 글꼴 검색" autocomplete="off" class="${def.class.placeholder}">
                 <dl style="display:none"></dl>
                 <span class="${def.class.tooltip} ${def.class.ps1}" id="${def.id.fonttooltip}">
-                  <span class="${def.class.emoji}" title="单击查看帮助">\ud83d\udd14</span>
+                  <span class="${def.class.emoji}" title="도움말 보기를 클릭">\ud83d\udd14</span>
                   <span class="${def.class.tooltip} ${def.class.ps2}">
-                  <p><strong>温馨提示 </strong>脚本预载了常用的中文字体，下拉菜单中所罗列的字体是在代码字体表中您已安装过的字体，没有安装过则不会显示。</p>
-                  <p><em style="color:darkred">（注一）</em>如果没有重新选择字体，则使用上一次保存的字体。首次使用默认为微软雅黑字体。</p>
-                  <p><em style="color:darkred">（注二）</em>输入框可输入关键字进行搜索，支持中文和英文字体名。</p>
-                  <p><em style="color:darkred">（注三）</em>字体是按您选择的先后顺序进行优先渲染的，所以多选不如只选一个您最想要的。</p>
-                  <p><em style="color:darkred">（注四）</em>如果“字体重写”被关闭，那么本功能将自动禁用，网页字体将采用“网站默认”的字体设置。</p>
-                  <p><em style="color:darkred">（注五）</em>双击\ud83d\udd14可以打开自定义字体的添加工具，以使用更多新字体。</p>
+                  <p><strong>힌트 </strong>스크립트에는 일반적으로 사용되는 중국어 글꼴이 미리 로드되어 있으며, 드롭다운 메뉴에 나열된 글꼴은 코드 글꼴 목록에 설치한 글꼴이며, 설치하지 않은 경우 표시되지 않습니다.</p>
+                  <p><em style="color:darkred">（注一）</em>글꼴을 다시 선택하지 않으면 마지막으로 저장한 글꼴이 사용됩니다. 처음 사용할 때의 기본값은 Microsoft Black입니다. </p>
+                  <p><em style="color:darkred">（注二）</em>입력 상자에는 검색할 키워드를 입력할 수 있으며 중국어와 영어 글꼴 이름을 모두 지원합니다. </p>
+                  <p><em style="color:darkred">（注三）</em>글꼴은 선택한 순서대로 먼저 렌더링되므로 가장 원하는 글꼴 하나만 선택하기보다는 두 개 이상을 선택하는 것이 좋습니다. </p>
+                  <p><em style="color:darkred">（注四）</em>'글꼴 다시 쓰기'를 끄면 이 기능이 자동으로 비활성화되고 웹 페이지 글꼴은 '사이트 기본값' 글꼴 설정을 사용합니다. </p>
+                  <p><em style="color:darkred">（注五）</em>두번 클릭하면\ud83d\udd14사용자 정의 글꼴용 추가 도구를 열어 더 많은 새 글꼴을 사용할 수 있습니다. </p>
                   </span>
                 </span>
               </div>`
@@ -3140,11 +3140,11 @@
                 received_Fontlist += JSON.stringify(item) + "\r\n";
               });
               let frDialog = new FrDialogBox({
-                trueButtonText: "保 存",
-                falseButtonText: "帮助文档",
-                neutralButtonText: "取 消",
-                messageText: `<p style="color:#555555;font-size:14px!important">以下文本域可按预定格式增加自定义字体。请用小贴士或按样例填写，输入有误将被自动过滤。与『<a href="${def.const.gfHost}#fontlist" title="查看内置字体表" target="_blank">内置字体表</a>』重复的字体将被自动剔除。【功能小贴士\uff1a<span id="${def.const.seed}_addTools" title="点击开启工具" style="color:crimson;cursor:pointer">字体添加辅助工具</span>】</p><p><textarea id="${def.const.seed}_custom_Fontlist" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:160px!important;outline:none!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain" placeholder='字体表自定义格式样例，每行一组字体名称数据，如下\uff1a\r\n{ "ch":"中文字体名一","en":"EN Fontname 1" }\u21b2\r\n{ "ch":"中文字体名二","en":"EN Fontname 2","ps":"Post-Script Name" }\u21b2\r\n\r\n（注一\uff1a“ps:”该项为字体PostScript名称，可选填写）\r\n（注二\uff1a\u21b2为换行符号，输入(Enter)回车即可）'>${received_Fontlist}</textarea></p><p style="display:block;margin:-5px 0 0 -7px!important;height:max-content;color:#dc143c;font-size:14px!important">（请勿添加过多自定义字体，避免造成页面加载缓慢）</p>`,
-                titleText: "自定义字体表",
+                trueButtonText: "보 존",
+                falseButtonText: "도움말 파일",
+                neutralButtonText: "취 소",
+                messageText: `<p style="color:#555555;font-size:14px!important">다음 텍스트 필드에는 미리 정해진 형식의 사용자 지정 글꼴을 추가할 수 있습니다. 팁을 사용하거나 샘플에 따라 필드를 채우면 입력 오류가 자동으로 필터링됩니다. 다음 항목과 비교『<a href="${def.const.gfHost}#fontlist" title="查看内置字体表" target="_blank">内置字体表</a>』重复的字体将被自动剔除。【功能小贴士\uff1a<span id="${def.const.seed}_addTools" title="点击开启工具" style="color:crimson;cursor:pointer">字体添加辅助工具</span>】</p><p><textarea id="${def.const.seed}_custom_Fontlist" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:160px!important;outline:none!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain" placeholder='字体表自定义格式样例，每行一组字体名称数据，如下\uff1a\r\n{ "ch":"中文字体名一","en":"EN Fontname 1" }\u21b2\r\n{ "ch":"中文字体名二","en":"EN Fontname 2","ps":"Post-Script Name" }\u21b2\r\n\r\n（注一\uff1a“ps:”该项为字体PostScript名称，可选填写）\r\n（注二\uff1a\u21b2为换行符号，输入(Enter)回车即可）'>${received_Fontlist}</textarea></p><p style="display:block;margin:-5px 0 0 -7px!important;height:max-content;color:#dc143c;font-size:14px!important">（请勿添加过多自定义字体，避免造成页面加载缓慢）</p>`,
+                titleText: "사용자 정의 글꼴 테이블",
               });
               const customFontlistNode = qS(`#${def.const.seed}_custom_Fontlist`, def.const.dialogIf);
               customFontlistNode?.addEventListener("keydown", e => e.stopImmediatePropagation());
@@ -3152,21 +3152,21 @@
               qS(`#${def.const.seed}_addTools`, def.const.dialogIf)?.addEventListener("click", () => {
                 let chName, enName, psName, cusFontName;
                 chName = def.dialog.prompt(
-                  "请输入「中文字体家族名称」\uff1a\r\n(例如\uff1a鸿蒙黑体，仅支持半角输入模式，包括中文、日文、韩文、英文，数字、小数点、减号、下划线、空格、@)",
+                  "입력하시오「중국어 글꼴 패밀리 이름」\uff1a\r\n(예시\uff1a홍멍 굵게는 중국어, 일본어, 한국어, 영어, 숫자, 소수점, 빼기 기호, 밑줄, 공백을 포함한 반모서리 입력 모드만 지원합니다, @)",
                   "鸿蒙黑体"
                 );
                 if (chName === null) {
                   return;
                 } else if (/^@?[\w\u2E80-\uD7FF\-.,!/（）() ]+$/.test(chName.trim())) {
                   enName = def.dialog.prompt(
-                    "请输入「英文字体家族名称」\uff1a\r\n(例如\uff1aHarmonyOS Sans SC，仅支持半角输入模式，包括英文、数字、小数点、减号、下划线、空格、@)",
+                    "입력하시오「영어 글꼴 패밀리 이름」\uff1a\r\n(예시\uff1aHarmonyOS Sans SC，영어, 숫자, 소수점, 빼기 기호, 밑줄, 공백을 포함한 절반 너비 입력 모드만 지원됩니다, @)",
                     "HarmonyOS Sans SC"
                   );
                   if (enName === null) {
                     return;
                   } else if (/^@?[\w\-., !/()]+$/.test(enName.trim())) {
                     psName = def.dialog.prompt(
-                      "请输入「PostScript名称」\uff1a\r\n(为使新增字体全局生效，请尽量填写PostScript名称。如您暂时无法提供PostScript名称，可留空)（查询请访问Fontke.com）",
+                      "입력하시오「PostScript이름」\uff1a\r\n(추가된 글꼴을 전 세계에서 사용할 수 있도록 PostScript 이름을 최대한 많이 입력해 주세요. 현재 포스트스크립트 이름을 입력할 수 없는 경우 비워두셔도 됩니다(문의는 Fontke.com을 참조하세요). ",
                       ""
                     );
                     if (psName === null) {
@@ -3180,10 +3180,10 @@
                     customFontlistNode.value = customFontlistNode.value.trim().concat(aTrim, cusFontName, "\r\n");
                     custom_Fontlist = customFontlistNode.value.trim();
                   } else {
-                    def.dialog.alert("英文字体家族名称 格式输入错误\uff01");
+                    def.dialog.alert("영어 글꼴 패밀리 이름 형식 입력 오류\uff01");
                   }
                 } else {
-                  def.dialog.alert("中文字体家族名称 格式输入错误\uff01");
+                  def.dialog.alert("중국어 글꼴 패밀리 이름 형식 입력 오류\uff01");
                 }
               });
               customFontlistNode?.addEventListener("change", function () {
@@ -3199,9 +3199,9 @@
                 if (!custom_Fontlist.length) {
                   GMdeleteValue("_CUSTOM_FONTLIST_");
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
-                    messageText: "<p style='color:indigo'>自定义字体表已初始化成功\uff01<p><p>字体列表全局缓存已自动重建，当前页面即将刷新。</p>",
-                    titleText: "自定义字体数据重置",
+                    trueButtonText: "결정",
+                    messageText: "<p style='color:indigo'>사용자 정의 글꼴 테이블이 성공적으로 초기화되었습니다.\uff01<p><p>글꼴 목록 글로벌 캐시가 자동으로 다시 작성되었으며 현재 페이지가 곧 새로 고쳐질 예정입니다.</p>",
+                    titleText: "사용자 지정 글꼴 데이터 재설정",
                   });
                   cache.remove("_FONTCHECKLIST_");
                   if (await frDialog.respond()) closeConfigurePage({ isReload: true });
@@ -3211,9 +3211,9 @@
                   const unique_Save_Fontlist = getUniqueFontlist(save_Fontlist);
                   saveData("_CUSTOM_FONTLIST_", getDeduplicatedValues(unique_Save_Fontlist, fontCheck));
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
-                    messageText: `<p style="color:darkgreen">您所提交的自定义字体已保存成功\uff01<p><p>字体列表全局缓存已自动重建，当前页面即将刷新。</p><p style='color:coral;font-size:12px!important'>注：格式错误或重复的字体代码将被自动过滤。</p>`,
-                    titleText: "自定义字体数据保存",
+                    trueButtonText: "결정",
+                    messageText: `<p style="color:darkgreen">제출한 사용자 정의 글꼴이 성공적으로 저장되었습니다.\uff01<p><p>글꼴 목록 글로벌 캐시가 자동으로 다시 작성되었으며 현재 페이지가 곧 새로 고쳐질 예정입니다.</p><p style='color:coral;font-size:12px!important'>참고: 형식이 잘못되었거나 중복된 글꼴 코드는 자동으로 필터링됩니다.</p>`,
+                    titleText: "사용자 지정 글꼴 데이터 저장",
                   });
                   cache.remove("_FONTCHECKLIST_");
                   if (await frDialog.respond()) closeConfigurePage({ isReload: true });
@@ -3414,7 +3414,7 @@
                     <input type="checkbox" id="${def.id.iscusmono}" class="${def.class.checkbox}" ${_config_data_.isCustomMono ? "checked" : ""} />
                     <label for="${def.id.iscusmono}"></label>
                   </div>` +
-                  `<p style="display:block;color:#555555;font-size:14px!important">\u2474 다음 텍스트 필드는 동일한 너비의 글꼴을 적용할 루트 필드 및 요소 선택기를 설정합니다.<br><em style="color:#dc143c">CSS 구문 규칙에 익숙하지 않은 경우 스타일 실패를 방지하기 위해 비워 두세요.</em></p><p><textarea id="${def.const.seed}_monospaced_siterules" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:140px!important;outline:0!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain;word-break:keep-all!important" placeholder="한 줄당 하나의 규칙만 허용되며 동일한 사이트에 대해 서로 다른 규칙을 반복해서 추가할 수 있습니다.\r\n형식예：@도메인명##요소선택기1,요소선택기2,……\r\n예시：\r\n@github.com##[class~='blob-code'] *\r\n@github.com##.example,#abc,div:not(.test)\r\n@github.dev###test:not([class*='test'])">${monospacedsiterules}\r\n</textarea></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2475 다음은 영문 이소 너비 글꼴을 사용자 지정하기 위해 설정할 수 있으며, 예제에 따라 형식을 입력하세요.。<br><em style="color:#dc143c">참고: 모노스페이스 글꼴 패밀리는 이미 기본 제공되므로 다시 추가할 필요가 없습니다.</em></p><p><input id="${def.const.seed}_monospaced_font" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder="예시：'Source Code Pro','Mono','Monaco'" value="${monospacedfont}"></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2476 다음은 OpenType 글꼴 글꼴-기능-설정 속성을 설정합니다.<br><em style="color:#dc143c">이 속성을 모르는 경우 스타일링 오류를 방지하기 위해 비워 두세요.</em></p><p><input id="${def.const.seed}_monospaced_feature" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder='例如："liga" 0,"tnum","zero"' value='${monospacedfeature}'></p>`,
+                  `<p style="display:block;color:#555555;font-size:14px!important">\u2474 다음 텍스트 필드는 동일한 너비의 글꼴을 적용할 루트 필드 및 요소 선택기를 설정합니다.<br><em style="color:#dc143c">CSS 구문 규칙에 익숙하지 않은 경우 스타일 실패를 방지하기 위해 비워 두세요.</em></p><p><textarea id="${def.const.seed}_monospaced_siterules" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:140px!important;outline:0!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain;word-break:keep-all!important" placeholder="한 줄당 하나의 규칙만 허용되며 동일한 사이트에 대해 서로 다른 규칙을 반복해서 추가할 수 있습니다.\r\n형식예：@도메인명##요소선택기1,요소선택기2,……\r\n예시：\r\n@github.com##[class~='blob-code'] *\r\n@github.com##.example,#abc,div:not(.test)\r\n@github.dev###test:not([class*='test'])">${monospacedsiterules}\r\n</textarea></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2475 다음은 영문 이소 너비 글꼴을 사용자 지정하기 위해 설정할 수 있으며, 예제에 따라 형식을 입력하세요.。<br><em style="color:#dc143c">참고: 모노스페이스 글꼴 패밀리는 이미 기본 제공되므로 다시 추가할 필요가 없습니다.</em></p><p><input id="${def.const.seed}_monospaced_font" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder="예시：'Source Code Pro','Mono','Monaco'" value="${monospacedfont}"></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2476 다음은 OpenType 글꼴 글꼴-기능-설정 속성을 설정합니다.<br><em style="color:#dc143c">이 속성을 모르는 경우 스타일링 오류를 방지하기 위해 비워 두세요.</em></p><p><input id="${def.const.seed}_monospaced_feature" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder='예시："liga" 0,"tnum","zero"' value='${monospacedfeature}'></p>`,
                 titleText: "사용자 지정 아이소메트릭 글꼴 설정",
               });
               const monospacedSiteRulesNode = qS(`#${def.const.seed}_monospaced_siterules`, def.const.dialogIf);
@@ -3484,7 +3484,7 @@
                 if (custom_MonospacedFontList && !monospaced_FontListArray) {
                   copyToClipboard(custom_MonospacedFontList);
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
+                    trueButtonText: "결정",
                     messageText: "<p style='color:crimson'>제출한 사용자 지정 아이소메트릭 글꼴 데이터가 올바르지 않습니다. 다시 입력해 주세요.</p><p>참고: 이전에 제출한 정보는 클립보드에 자동으로 저장됩니다.</p>",
                     titleText: "사용자 지정 아이소메트릭 글꼴 데이터 오류",
                   });
@@ -3507,7 +3507,7 @@
                   _config_data_.isCustomMono = Boolean(qS(`#${def.id.iscusmono}`, def.const.dialogIf).checked);
                   saveData("_CONFIGURE_", _config_data_);
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
+                    trueButtonText: "결정",
                     messageText: `<p style="color:darkgreen">사용자 지정 아이소메트릭 글꼴과 관련된 데이터가 성공적으로 저장되었습니다.\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침됩니다.</p><p style="color:coral;font-size:12px!important">참고: 잘못된 형식의 입력은 자동으로 필터링됩니다.</p>`,
                     titleText: "사용자 지정 아이소메트릭 글꼴 관련 데이터 저장",
                   });
