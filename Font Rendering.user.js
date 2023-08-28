@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name               글자렌더링（스크립트）
 // @name:ja            フォントレンダリング（カスタマイズ）
-// @name:en            Font Rendering (Customized)
+// @name:en            Font Rendering (한글)
 // @version            2023.08.05.1
 // @author             F9y4ng
-// @description       MacType을 설치할 필요 없이 브라우저에서 글꼴 렌더링을 최적화하고 모든 페이지의 글꼴을 더욱 질감 있게 만들 수 있습니다. 기본적으로 Microsoft Black이 사용되지만 기본 설정에 따라 다른 글꼴을 사용자 지정할 수 있습니다. 이 스크립트는 글꼴 재작성, 글꼴 다듬기, 글꼴 크기 조정, 글꼴 획, 글꼴 그림자, 특수 스타일 요소의 필터링 및 라이선스, 사용자 지정 아이소메트릭 글꼴 등과 같은 브라우저 글꼴 렌더링을 위한 고급 기능을 제공합니다. 스크립트는 글로벌 렌더링과 개인화된 렌더링을 지원하며, '스크립트 관리자 아이콘을 클릭'하거나 '단축키를 사용하여' 구성 인터페이스를 호출하여 구성할 수 있습니다. 이 스크립트는 대부분의 주요 브라우저 및 주요 스크립트 관리자와 호환되며 Greasemonkey 스크립트 및 브라우저 확장 프로그램과도 호환됩니다.
+// @description        MacType을 설치할 필요 없이 브라우저에서 글꼴 렌더링을 최적화하고 모든 페이지의 글꼴을 더욱 질감 있게 만들 수 있습니다. 기본적으로 Microsoft Black이 사용되지만 기본 설정에 따라 다른 글꼴을 사용자 지정할 수 있습니다. 이 스크립트는 글꼴 재작성, 글꼴 다듬기, 글꼴 크기 조정, 글꼴 획, 글꼴 그림자, 특수 스타일 요소의 필터링 및 라이선스, 사용자 지정 아이소메트릭 글꼴 등과 같은 브라우저 글꼴 렌더링을 위한 고급 기능을 제공합니다. 스크립트는 글로벌 렌더링과 개인화된 렌더링을 지원하며, '스크립트 관리자 아이콘을 클릭'하거나 '단축키를 사용하여' 구성 인터페이스를 호출하여 구성할 수 있습니다. 이 스크립트는 대부분의 주요 브라우저 및 주요 스크립트 관리자와 호환되며 Greasemonkey 스크립트 및 브라우저 확장 프로그램과도 호환됩니다.
 // @description:en     Without MacType, improve browser displaying more textured. "Microsoft Yahei" is used by default. For browser displaying, the script provides advanced features such as font rewriting, smoothing, scaling, stroke, shadow, special style elements, custom monospaced, etc. It can configure by "click Script Manager icon" or "use hotkeys" to call out the setup. The script is already compatible with major browsers and userscript managers, also commonly used Greasemonkey scripts and browser extensions.
 // @namespace          https://openuserjs.org/scripts/f9y4ng/Font_Rendering_(Customized)
 // @icon               https://img.icons8.com/stickers/48/font-style-formatting.png
