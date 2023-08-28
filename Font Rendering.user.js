@@ -2246,8 +2246,8 @@
             let frDialog = new FrDialogBox({
               trueButtonText: "결정",
               neutralButtonText: "취 소",
-              messageText: `<p style="color:darkred">下一步操作将关闭默认的全局设置数据，您可以仅在指定的域名保存需要渲染的站点独享数据。请注意，全局数据禁用后，您需要重新配置并保存为全局数据才能启用默认全局渲染规则。</p><p>请确认您是否要禁用全局设置？</p>`,
-              titleText: "禁用全局设置数据",
+              messageText: `<p style="color:darkred">다음 작업을 수행하면 기본 전역 설정 데이터가 비활성화되고 지정된 도메인에서만 렌더링해야 하는 사이트 전용 데이터를 저장할 수 있습니다. 전역 데이터를 비활성화한 후에는 기본 전역 렌더링 규칙을 사용하려면 전역 데이터로 재구성하여 저장해야 합니다.</p><p>글로벌 설정을 비활성화할지 여부를 확인하세요？</p>`,
+              titleText: "전역 설정 데이터 비활성화",
             });
             if (await frDialog.respond()) {
               saveData("_FONTS_SET_", {
@@ -2271,8 +2271,8 @@
           qS(`#${def.id.flcid}`, def.const.dialogIf)?.addEventListener("click", async () => {
             let frDialog = new FrDialogBox({
               trueButtonText: "결정",
-              messageText: `<p style="padding-bottom:6px;color:#b8860b;text-align:center;font-size:18px!important">字体列表全局缓存已重建，当前页面即将刷新\uff01</p><p style="text-align:center"><a style="display:inline-block;overflow:hidden;width:302px;height:237px;border:2px solid #b8860b;border-radius:8px;background:url('${def.const.loadImg}') 50% 50% no-repeat"><img src='${def.const.fontlistImg}' alt="字体列表全局缓存已重建"/></a></p>`,
-              titleText: "字体列表全局缓存已重建",
+              messageText: `<p style="padding-bottom:6px;color:#b8860b;text-align:center;font-size:18px!important">글꼴 목록 글로벌 캐시가 재구축되었습니다. 현재 페이지가 곧 새로 고쳐질 예정입니다.\uff01</p><p style="text-align:center"><a style="display:inline-block;overflow:hidden;width:302px;height:237px;border:2px solid #b8860b;border-radius:8px;background:url('${def.const.loadImg}') 50% 50% no-repeat"><img src='${def.const.fontlistImg}' alt="글꼴 목록 글로벌 캐시 재구축"/></a></p>`,
+              titleText: "글꼴 목록 글로벌 캐시 재구축",
             });
             cache.remove("_FONTCHECKLIST_");
             if (await frDialog.respond()) closeConfigurePage({ isReload: true });
@@ -2305,8 +2305,8 @@
             saveData("_CONFIGURE_", _config_data_);
             let frDialog = new FrDialogBox({
               trueButtonText: "결정",
-              messageText: "<p style='color:darkgoldenrod'>高级核心功能参数已成功保存，当前页面即将刷新\uff01</p>",
-              titleText: "高级核心功能设置保存",
+              messageText: "<p style='color:darkgoldenrod'>고급 핵심 기능 매개변수가 성공적으로 저장되었으며, 현재 페이지가 곧 새로 고쳐질 것입니다\uff01</p>",
+              titleText: "고급 핵심 기능 설정 저장",
             });
             if (await frDialog.respond()) closeConfigurePage({ isReload: true });
             frDialog = null;
@@ -2318,10 +2318,10 @@
         includeSites: async () => {
           let frDialog = new FrDialogBox({
             trueButtonText: "결정",
-            falseButtonText: "自定义排除",
+            falseButtonText: "사용자 지정 제외",
             neutralButtonText: "취 소",
-            messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${TOP_HOST_NAME}</p><p style="color:darkgreen">该域名下所有页面将重新进行字体渲染\uff01</p><p>确定后当前页面将自动刷新，请确认是否재개？</p>`,
-            titleText: "재개字体渲染",
+            messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${TOP_HOST_NAME}</p><p style="color:darkgreen">이 도메인의 모든 페이지는 글꼴로 다시 렌더링됩니다.\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침됩니다.？</p>`,
+            titleText: "글꼴 렌더링 재개",
           });
           if (await frDialog.respond()) {
             let panDomain;
@@ -2342,10 +2342,10 @@
             } else {
               let frDialog = new FrDialogBox({
                 trueButtonText: "결정",
-                falseButtonText: "管 理",
+                falseButtonText: "관리",
                 neutralButtonText: "취 소",
-                messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${panDomain}</p><p style="color:darkred">该网站是被以上包含通配符的泛域名所排除渲染的。</p><p>『确定』将自动取消该泛域名下所有的排除项。</p><p>『管理』您将进入自定义排除站点列表手动处理。</p>`,
-                titleText: "재개泛域名下的字体渲染",
+                messageText: `<p style="font:italic 700 24px/150% Candara,'Times New Roman'!important">${panDomain}</p><p style="color:darkred">이 사이트는 와일드카드가 포함된 위의 일반 도메인 이름으로 렌더링에서 제외됩니다.。</p><p>『확인』을 클릭하면 이 일반 도메인 아래의 모든 제외가 자동으로 취소됩니다.</p><p>『관리』는 사용자 지정 제외 사이트 목록으로 이동하여 수동으로 처리할 수 있습니다.。</p>`,
+                titleText: "일반 도메인의 글꼴 렌더링",
               });
               if (await frDialog.respond()) {
                 exSite = await exSiteData();
