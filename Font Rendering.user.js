@@ -3221,9 +3221,9 @@
                 } else {
                   copyToClipboard(custom_Fontlist);
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
-                    messageText: "<p style='color:crimson'>您所提交的自定义字体数据格式有误，请重新输入。<p><p>注意：先前提交的信息已自动保存至剪切板中。</p>",
-                    titleText: "字体表数据格式错误",
+                    trueButtonText: "결정",
+                    messageText: "<p style='color:crimson'>제출한 사용자 지정 글꼴 데이터가 잘못된 형식입니다. 다시 입력해 주세요。<p><p>참고: 이전에 제출한 정보는 클립보드에 자동으로 저장중.</p>",
+                    titleText: "글꼴 테이블 데이터 형식 오류",
                   });
                   if (await frDialog.respond()) {
                     let clickEvent = new Event("dblclick", { bubbles: true, cancelable: false });
@@ -3249,7 +3249,7 @@
           fontfaceNode.addEventListener("change", async () => {
             await getCurrentFontName(CONST_VALUES.fontFace, refont, def.const.defaultFont);
             if (fontfaceNode.checked && !CONST_VALUES.fontFace) {
-              inputNode.setAttribute("placeholder", "正在恢复之前设置的字体…");
+              inputNode.setAttribute("placeholder", "이전에 설정한 글꼴이 복원 중…");
               sleep(120)
                 .then(() => qS(`#${def.id.submit} .${def.class.submit}[v-Preview="true"]`, def.const.configIf))
                 .then(submitPreview => submitPreview?.click());
@@ -3406,16 +3406,16 @@
               const monospacedfont = fontlist.trim();
               const monospacedfeature = feature.trim();
               let frDialog = new FrDialogBox({
-                trueButtonText: "保存数据",
-                neutralButtonText: "取 消",
+                trueButtonText: "데이터 저장",
+                neutralButtonText: "취소",
                 messageText:
                   `<div id="${def.id.cm}" style="margin:0 0 8px;border-bottom:1px groove #cccccc;width:97%!important">
-                    <span class="${def.const.seed}_cusmono" style="color:#555555!important;font-weight:700!important">开启自定义等宽字体（默认：关闭）</span>
+                    <span class="${def.const.seed}_cusmono" style="color:#555555!important;font-weight:700!important">사용자 지정 아이소메트릭 글꼴 사용(기본값: 꺼짐) </span>
                     <input type="checkbox" id="${def.id.iscusmono}" class="${def.class.checkbox}" ${_config_data_.isCustomMono ? "checked" : ""} />
                     <label for="${def.id.iscusmono}"></label>
                   </div>` +
-                  `<p style="display:block;color:#555555;font-size:14px!important">\u2474 以下文本域可设置需应用等宽字体的根域及元素选择器。<br><em style="color:#dc143c">如果您不熟悉CSS语法规则，请保持留空，避免样式失效。</em></p><p><textarea id="${def.const.seed}_monospaced_siterules" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:140px!important;outline:0!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain;word-break:keep-all!important" placeholder="每行只能允许一条规则，相同站点不同规则可重复添加。\r\n格式如：@网站域名##元素选择器1,元素选择器2,……\r\n例如：\r\n@github.com##[class~='blob-code'] *\r\n@github.com##.example,#abc,div:not(.test)\r\n@github.dev###test:not([class*='test'])">${monospacedsiterules}\r\n</textarea></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2475 以下可设置自定义英文等宽字体，请按示例格式填写。<br><em style="color:#dc143c">请注意：monospace字体族已程序内置，无需重复添加。</em></p><p><input id="${def.const.seed}_monospaced_font" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder="例如：'Source Code Pro','Mono','Monaco'" value="${monospacedfont}"></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2476 以下可设置OpenType字体font-feature-settings属性。<br><em style="color:#dc143c">如果您不了解该属性，请保持留空，以免造成样式错误。</em></p><p><input id="${def.const.seed}_monospaced_feature" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder='例如："liga" 0,"tnum","zero"' value='${monospacedfeature}'></p>`,
-                titleText: "设置自定义等宽字体",
+                  `<p style="display:block;color:#555555;font-size:14px!important">\u2474 다음 텍스트 필드는 동일한 너비의 글꼴을 적용할 루트 필드 및 요소 선택기를 설정합니다.<br><em style="color:#dc143c">CSS 구문 규칙에 익숙하지 않은 경우 스타일 실패를 방지하기 위해 비워 두세요.</em></p><p><textarea id="${def.const.seed}_monospaced_siterules" style="box-sizing:border-box;margin:0!important;padding:5px!important;max-width:388px!important;min-width:388px!important;min-height:140px!important;outline:0!important;border:1px solid #999999;border-radius:6px;white-space:pre;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;resize:vertical;scrollbar-width:thin;overscroll-behavior:contain;word-break:keep-all!important" placeholder="한 줄당 하나의 규칙만 허용되며 동일한 사이트에 대해 서로 다른 규칙을 반복해서 추가할 수 있습니다.\r\n형식예：@도메인명##요소선택기1,요소선택기2,……\r\n예시：\r\n@github.com##[class~='blob-code'] *\r\n@github.com##.example,#abc,div:not(.test)\r\n@github.dev###test:not([class*='test'])">${monospacedsiterules}\r\n</textarea></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2475 다음은 영문 이소 너비 글꼴을 사용자 지정하기 위해 설정할 수 있으며, 예제에 따라 형식을 입력하세요.。<br><em style="color:#dc143c">참고: 모노스페이스 글꼴 패밀리는 이미 기본 제공되므로 다시 추가할 필요가 없습니다.</em></p><p><input id="${def.const.seed}_monospaced_font" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder="예시：'Source Code Pro','Mono','Monaco'" value="${monospacedfont}"></p><p style="display:block;margin-top:10px!important;color:#555555;font-size:14px!important">\u2476 다음은 OpenType 글꼴 글꼴-기능-설정 속성을 설정합니다.<br><em style="color:#dc143c">이 속성을 모르는 경우 스타일링 오류를 방지하기 위해 비워 두세요.</em></p><p><input id="${def.const.seed}_monospaced_feature" style="box-sizing:border-box;padding:5px;width:380px;outline:0!important;border:1px solid #999999;border-radius:6px;font:normal 400 14px/150% monospace,${INITIAL_VALUES.fontSelect},system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important" placeholder='例如："liga" 0,"tnum","zero"' value='${monospacedfeature}'></p>`,
+                titleText: "사용자 지정 아이소메트릭 글꼴 설정",
               });
               const monospacedSiteRulesNode = qS(`#${def.const.seed}_monospaced_siterules`, def.const.dialogIf);
               const monospacedFontNode = qS(`#${def.const.seed}_monospaced_font`, def.const.dialogIf);
@@ -3468,9 +3468,9 @@
                 if (custom_MonospacedSiteRules && !monospaced_SiteRulesArray) {
                   copyToClipboard(custom_MonospacedSiteRules);
                   let frDialog = new FrDialogBox({
-                    trueButtonText: "确 定",
-                    messageText: "<p style='color:crimson'>自定义根域及元素选择器有误，请重新输入。</p><p>注意：先前提交的信息已自动保存至剪切板中。</p>",
-                    titleText: "自定义根域及元素选择器数据错误",
+                    trueButtonText: "결정",
+                    messageText: "<p style='color:crimson'>사용자 지정 루트 도메인 및 요소 선택기에 오류가 발생했습니다. 다시 입력하세요.</p><p>참고: 이전에 제출한 정보는 클립보드에 자동으로 저장됩니다.</p>",
+                    titleText: "사용자 지정 루트 도메인 및 요소 선택기 데이터 오류",
                   });
                   if (await frDialog.respond()) {
                     let clickEvent = new Event("dblclick", { bubbles: true, cancelable: false });
@@ -3485,8 +3485,8 @@
                   copyToClipboard(custom_MonospacedFontList);
                   let frDialog = new FrDialogBox({
                     trueButtonText: "确 定",
-                    messageText: "<p style='color:crimson'>您提交的自定义等宽字体数据有误，请重新输入。</p><p>注意：先前提交的信息已自动保存至剪切板中。</p>",
-                    titleText: "自定义等宽字体数据错误",
+                    messageText: "<p style='color:crimson'>제출한 사용자 지정 아이소메트릭 글꼴 데이터가 올바르지 않습니다. 다시 입력해 주세요.</p><p>참고: 이전에 제출한 정보는 클립보드에 자동으로 저장됩니다.</p>",
+                    titleText: "사용자 지정 아이소메트릭 글꼴 데이터 오류",
                   });
                   if (await frDialog.respond()) {
                     let clickEvent = new Event("dblclick", { bubbles: true, cancelable: false });
@@ -3508,8 +3508,8 @@
                   saveData("_CONFIGURE_", _config_data_);
                   let frDialog = new FrDialogBox({
                     trueButtonText: "确 定",
-                    messageText: `<p style="color:darkgreen">您提交的自定义等宽字体相关数据已保存成功\uff01</p><p>当前页面将在您确认后自动刷新。</p><p style="color:coral;font-size:12px!important">注：格式错误的输入内容将被自动过滤。</p>`,
-                    titleText: "自定义等宽字体相关数据保存",
+                    messageText: `<p style="color:darkgreen">사용자 지정 아이소메트릭 글꼴과 관련된 데이터가 성공적으로 저장되었습니다.\uff01</p><p>확인 후 현재 페이지가 자동으로 새로고침됩니다.</p><p style="color:coral;font-size:12px!important">참고: 잘못된 형식의 입력은 자동으로 필터링됩니다.</p>`,
+                    titleText: "사용자 지정 아이소메트릭 글꼴 관련 데이터 저장",
                   });
                   if (await frDialog.respond()) closeConfigurePage({ isReload: true });
                   frDialog = null;
