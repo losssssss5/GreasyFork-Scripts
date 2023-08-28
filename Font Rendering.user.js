@@ -797,10 +797,10 @@
     /* CUSTOMIZE_UPDATE_PROMPT_INFORMATION */
 
     const UPDATE_VERSION_NOTICE = String(
-      `<li class="${def.const.seed}_fix">优化第三方Emoji字体图标与系统字体图标的优先级。</li>
-        <li class="${def.const.seed}_fix">修正在content-context模式下冗余脚本检测的错误。</li>
-        <li class="${def.const.seed}_fix">修复粗体修正功能在:hover样式下无法触发的问题。</li>
-        <li class="${def.const.seed}_fix">修正一些已知的问题，优化样式，优化代码。</li>`
+      `<li class="${def.const.seed}_fix">타사 이모티콘 글꼴 아이콘과 시스템 글꼴 아이콘의 우선순위를 최적화하세요. </li>
+        <li class="${def.const.seed}_fix">콘텐츠 컨텍스트 모드에서 중복 스크립트 감지의 버그를 수정했습니다.</li>
+        <li class="${def.const.seed}_fix">호버 스타일 아래에서 굵은 수정 기능을 트리거할 수 없는 문제를 수정했습니다.</li>
+        <li class="${def.const.seed}_fix">알려진 문제를 해결하고, 스타일을 최적화하고, 코드를 최적화하세요.</li>`
     );
 
     /* INITIALIZE_FONT_LIBRARY */
